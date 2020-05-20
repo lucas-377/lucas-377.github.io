@@ -16,6 +16,6 @@ Sobrescrita dos padrões do navegador.
 }
 
 body {
-    background-color: #000000
-    color: #ffffff
+    background-color: black;
+    color: white;
 }
