@@ -234,7 +234,7 @@ Página Sobre Mim.
 /* Foto do Perfil.
 ========================================================================== */
 #foto {
-    background: url('../_imagens/foto-perfil.jpg') no-repeat;
+    background: url('foto-perfil.jpg') no-repeat;
     width: 250px;
     height: 250px;
     border-radius: 125px;
