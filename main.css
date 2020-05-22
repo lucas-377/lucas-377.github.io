@@ -194,7 +194,7 @@ div.container {
 ========================================================================== */
 div#banner {
     margin-top: 80px;
-    background: url('../_imagens/banner.png') no-repeat;
+    background: url('banner.png') no-repeat;
     background-size: cover;
     position: relative;
     background-position: 0 25%;
