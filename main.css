@@ -175,7 +175,7 @@ Corpo do Site.
 
 /* Titulos Centralizados.
 ========================================================================== */
-.titulo-center {
+#titulo-center {
     text-align: center;
     padding-bottom: 15px;
 }

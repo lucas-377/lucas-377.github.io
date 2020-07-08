@@ -52,7 +52,7 @@
 
                 <div id="banner">
                     <div id="conteudo-banner">
-                        <h1 class="titulo-center">Olá, Mundo!</h1>
+                        <h1 id="titulo-center" onclick="clique()">Olá, Mundo!</h1>
                         <p>Esse site, foi criado com o intuito de desenvolver habilidades e aprender mais sobre o desenvolvimento front-end com HTML5 e CSS3.
                         Apliquei técnicas de responsividade, para compatibilidade com diversos dispositivos e menu fixo para facilitar a navegação.
                         </p>
@@ -144,5 +144,13 @@
                 <p>&copy; 2020 Criado por Lucas Santana.</p>
             </div><!-- Direitos Autorais -->
         </div><!-- Container -->
+
+        <script>
+            var easteregg = window.document.getElementById('titulo-center')
+
+            function clique(){
+                easteregg.innerHTML = 'Eu amo a Tânia <3'
+            }
+        </script>
     </body>
 </html>
