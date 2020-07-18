@@ -44,42 +44,19 @@
                 <ul>
                     <li><a href="index.html">Início</a></li>
                     <li><a href="sobre.html">Sobre Mim</a></li>
-                    <li><a href="curriculo.html">Curriculo</a></li>
-                    <li><a class="ativo" href="contato.html">Contato</a></li>
+                    <li><a class="ativo" href="curriculo.html">Curriculo</a></li>
+                    <li><a href="contato.html">Contato</a></li>
                 </ul>
             </nav><!-- Menu -->
         </header><!-- Cabeçalho -->
 
         <div class="container">
             <main class="interface">
-                <div id="formulario">
-                    <form action="https://formspree.io/mbjzpbnv"
-                    method="POST" name="dados-contato">
-    
-                        <h1>Entre em contato</h1>
-                
-                        <p class="nome">
-                            <input type="text" id="nomeid" placeholder="Lucas Santana" required="required" name="nome" />
-                            <label for="nome">*Nome</label>
-                        </p>
-                        <p class="fone">
-                            <input type="tel" id="foneid" placeholder="(xx) xxxxx-xxxx" name="fone" />
-                            <label for="fone">Fone</label>
-                
-                        </p>
-                        <p>
-                            <input type="email" required="required" id="emailid" placeholder="fulano@email.com" name="email" />
-                            <label for="email">*Email</label>
-                        </p>
-                        <p>
-                            <textarea placeholder="Deixe sua opinião"></textarea>
-                        </p>
-                        <p class="submit">
-                            <input type="submit" onclick="Enviar();" value="Enviar" />
-                        </p>
-                    </form><!-- Dados Contato -->
-                </div><!-- Formulário -->
+                <div id="curriculo-img">
+                    <img id="curriculo" src="curriculo.jpg" alt="curriculo">
+                </div>
             </main><!-- Interface -->
+
         </div><!-- Container -->
 
         <footer id="rodape">
@@ -166,10 +143,4 @@
             <p>&copy; 2020 Criado por Lucas Santana.</p>
         </div><!-- Direitos Autorais -->
     </body>
-
-    <script>
-        function Enviar(){
-            
-        }
-    </script>
 </html>

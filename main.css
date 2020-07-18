@@ -49,8 +49,8 @@ Configurações Gerais.
     a. Formulário.
     b. Botão.
 
-6. Página Planejamento.
-    a. Tabela.
+6. Página Curriculo.
+    a. Imagem.
 
 7. Rodapé.
     a. Caixas.
@@ -228,7 +228,7 @@ Página Sobre Mim.
     margin-top: 80px;
     width: 100%;
     padding: 2em;
-    background-color: cornsilk;
+    background-color: #EFEFEF;
 }
 
 /* Foto do Perfil.
@@ -320,6 +320,7 @@ form {
     max-width: 500px;
     text-transform: uppercase;
     border-radius: 10px;
+    margin: 0 auto;
 }
 
 form h1 {
@@ -351,50 +352,18 @@ form textarea {
 }
 
 /* ==========================================================================
-Página Planejamento.
+Página Curriculo.
 ========================================================================== */
-/* Tabela.
+/* Imagem.
 ========================================================================== */
-#tabela {
-    border: 2px solid #808080;
-    text-align: center;
-    border-radius: 10px;
-    padding: 10px 0;
-}
 
-#titulo {
-    background: blanchedalmond;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 20px;
-    padding: 7px;
-}
-
-#planejamento {
+#curriculo-img {
     margin: 0 auto;
-    border-spacing: 0;
-    border: 1px solid black;
+    display: flex;
 }
-
-#planejamento td {
-    border: 1px solid black;
-    padding: 4px;
-}
-
-.dias {
-    font-weight: bold;
-    color: white;
-    background: black;
-}
-
-.horario {
-    color: white;
-    background: black;
-}
-
-.rango {
-    background: #1a1a1a;
-    color: #ffffff;
+#curriculo {
+    width: 1000px;
+    margin: auto;
 }
 
 /* ==========================================================================

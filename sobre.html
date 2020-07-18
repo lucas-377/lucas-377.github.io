@@ -20,37 +20,37 @@
     </head>
 
     <body>
+        <header class="cabecalho">
+            <nav id="menu">
+                <!-- Cria uma caixa de seleção -->
+                <input type="checkbox" id="check" />
+
+                <!-- Relaciona o icone "barras" a caixa selecionavel -->
+                <label for="check" class="botaocheck">
+                    <i class="fas fa-bars"></i>
+                </label>
+
+                <picture id="logo">
+                    <a href="index.html">
+                    <img src="logo.png" width="50px" height="50px" alt="Logo LS."/>
+                    </a>
+                </picture><!-- Logo -->
+            
+                <!-- Insere o texto do logo -->
+                <label class="logotipo">
+                    <a href="index.html">Lucas Santana</a>
+                </label>
+
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a class="ativo" href="sobre.html">Sobre Mim</a></li>
+                    <li><a href="curriculo.html">Curriculo</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav><!-- Menu -->
+        </header><!-- Cabeçalho -->
+
         <div class="container">
-            <header class="cabecalho">
-                <nav id="menu">
-                    <!-- Cria uma caixa de seleção -->
-                    <input type="checkbox" id="check" />
-
-                    <!-- Relaciona o icone "barras" a caixa selecionavel -->
-                    <label for="check" class="botaocheck">
-                        <i class="fas fa-bars"></i>
-                    </label>
-
-                    <picture id="logo">
-                        <a href="index.html">
-                        <img src="logo.png" width="50px" height="50px" alt="Logo LS."/>
-                        </a>
-                    </picture><!-- Logo -->
-                
-                    <!-- Insere o texto do logo -->
-                    <label class="logotipo">
-                        <a href="index.html">Lucas Santana</a>
-                    </label>
-
-                    <ul>
-                        <li><a href="index.html">Início</a></li>
-                        <li><a class="ativo" href="sobre.html">Sobre Mim</a></li>
-                        <li><a href="planejamento.html">Planejamento</a></li>
-                        <li><a href="contato.html">Contato</a></li>
-                    </ul>
-                </nav><!-- Menu -->
-            </header><!-- Cabeçalho -->
-
             <main class="interface">
                 <div id="foto">
                 </div><!-- Foto -->
@@ -68,7 +68,7 @@
                     <p>
                         27 anos, natural de Arujá / SP. Gosto de música, aventuras ao ar livre, levar uma vida simples e estar em constante evolução. Atualmente no cenário de pandemia, estou desenvolvendo um sistema acadêmico em linguagem C++ orientada a objetos, finalizando este site pessoal em HTML5 e CSS3, estudando estruturas de dados e outras disciplinas da universidade de forma autodidata. Futuramente, desenvolverei um jogo de plataforma, utilizando linguagem C++ com biblioteca gráfica SFML, pretendo aperfeiçoar este site ao estudar e desenvolver habilidades com JavaScript.
                     </p>
-                </div>
+                </div><!-- Dados -->
 
                 <div class="blocos">
                     <h1 class="titulo-center">Resumo</h1>
@@ -76,7 +76,7 @@
                         Atuei nas areas de TI e Publicidade como Suporte Técnico, Desenvolvedor, Designer Gráfico e Web Designer.
                         Acompanhei implantações e melhorias de sistemas e portais digitais, montagem de redes lógicas e físicas, instalação de computadores e impressoras para credenciamento em feiras e eventos de grande porte.
                     </p>
-                </div>
+                </div><!-- Blocos -->
 
                 <div class="blocos">
                     <h1 class="titulo-center">Habilidades</h1>
@@ -109,90 +109,90 @@
                     
                 </div><!-- Blocos -->
             </main><!-- Interface -->
+        </div><!-- Container -->
 
-            <footer id="rodape">
-                <div class="caixa-rodape">
-                    <div class="mapa-site">
-                        <h2>Mapa do Site</h2>
-                        <ul class="lista-rodape" id="lista-mapa">
-                            <li>
-                                <a href="index.html">
-                                    <span>Início</span>
-                                    <i class="fas fa-home"></i>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="sobre.html">
-                                    <span>Sobre Mim</span>
-                                    <i class="fas fa-user-circle"></i>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="planejamento.html">
-                                    <span>Planejamento</span>
-                                    <i class="fas fa-table"></i>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="contato.html">
-                                    <span>Contato</span>
-                                    <i class="fas fa-phone-square-alt"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div><!-- Mapa do Site-->
-                </div><!-- Caixa do Rodapé -->
-
-                <div class="caixa-rodape">
-                    <div class="logo-rodape">
-                        <a href="index.html">
-                            <img src="logo.png">
-                            <h2>Lucas Santana</h2>
-                            <p>Desenvolvendo Ideias.</p>
-                        </a>
-                    </div>
-                </div><!-- Caixa do Rodapé -->
-
-                <div class="caixa-rodape">
-                    <h2>Me encontre nas redes sociais</h2>
-                    <ul class="lista-rodape" id="lista-redes">
+        <footer id="rodape">
+            <div class="caixa-rodape">
+                <div class="mapa-site">
+                    <h2>Mapa do Site</h2>
+                    <ul class="lista-rodape" id="lista-mapa">
                         <li>
-                            <a href="https://www.linkedin.com/in/lucas377">
-                                <i class="fab fa-linkedin"></i>
-                                <span>LinkedIn</span>
+                            <a href="index.html">
+                                <span>Início</span>
+                                <i class="fas fa-home"></i>
                             </a>
                         </li>
 
                         <li>
-                            <a href="https://www.facebook.com/lucasarts.377" target="_blank">
-                                <i class="fab fa-facebook-square"></i>
-                                <span>Facebook</span>
+                            <a href="sobre.html">
+                                <span>Sobre Mim</span>
+                                <i class="fas fa-user-circle"></i>
                             </a>
                         </li>
 
                         <li>
-                            <a href="https://github.com/lucas-377" target="_blank">
-                                <i class="fab fa-github"></i>
-                                <span>GitHub</span>
+                            <a href="curriculo.html">
+                                <span>Curriculo</span>
+                                <i class="fas fa-file"></i>
                             </a>
                         </li>
 
                         <li>
-                            <a href="https://www.instagram.com/b4tman2.0" target="_blank">
-                                <i class="fab fa-instagram"></i>
-                                <span>Instagram</span>
+                            <a href="contato.html">
+                                <span>Contato</span>
+                                <i class="fas fa-phone-square-alt"></i>
                             </a>
                         </li>
                     </ul>
-                </div><!-- Caixa do Rodapé -->
-            </footer><!-- Rodapé -->
-            
-            <div class="direitos-autorais">
-                <p>&copy; 2020 Criado por Lucas Santana.</p>
-            </div><!-- Direitos Autorais -->
-        </div><!-- Container -->
+                </div><!-- Mapa do Site-->
+            </div><!-- Caixa do Rodapé -->
+
+            <div class="caixa-rodape">
+                <div class="logo-rodape">
+                    <a href="index.html">
+                        <img src="logo.png">
+                        <h2>Lucas Santana</h2>
+                        <p>Desenvolvendo Ideias.</p>
+                    </a>
+                </div>
+            </div><!-- Caixa do Rodapé -->
+
+            <div class="caixa-rodape">
+                <h2>Me encontre nas redes sociais</h2>
+                <ul class="lista-rodape" id="lista-redes">
+                    <li>
+                        <a href="https://www.linkedin.com/in/lucas377">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.facebook.com/lucasarts.377" target="_blank">
+                            <i class="fab fa-facebook-square"></i>
+                            <span>Facebook</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://github.com/lucas-377" target="_blank">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.instagram.com/b4tman2.0" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                    </li>
+                </ul>
+            </div><!-- Caixa do Rodapé -->
+        </footer><!-- Rodapé -->
+        
+        <div class="direitos-autorais">
+            <p>&copy; 2020 Criado por Lucas Santana.</p>
+        </div><!-- Direitos Autorais -->
     </body>
 </html>
