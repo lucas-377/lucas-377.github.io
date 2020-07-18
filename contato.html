@@ -21,7 +21,7 @@
 
     <body>
         <header class="cabecalho">
-            <nav id="menu">
+            <nav id="menu-alt">
                 <!-- Cria uma caixa de seleção -->
                 <input type="checkbox" id="check" />
 
@@ -32,7 +32,7 @@
 
                 <picture id="logo">
                     <a href="index.html">
-                    <img src="logo.png" width="50px" height="50px" alt="Logo LS."/>
+                    <img src="logols-white.png" width="50px" height="50px" alt="Logo LS."/>
                     </a>
                 </picture><!-- Logo -->
             
@@ -44,42 +44,54 @@
                 <ul>
                     <li><a href="index.html">Início</a></li>
                     <li><a href="sobre.html">Sobre Mim</a></li>
-                    <li><a href="curriculo.html">Curriculo</a></li>
+                    <li><a href="curriculo.html">Currículo</a></li>
                     <li><a class="ativo" href="contato.html">Contato</a></li>
                 </ul>
             </nav><!-- Menu -->
         </header><!-- Cabeçalho -->
 
-        <div class="container">
-            <main class="interface">
+        <div class="container" id="container-contato">
+            <div id="main">
+                <div id="smartphone">
+                    <img id="img-topo" src="smartphone.png" alt="Smartphone com mensagens de contato">
+                </div><!-- Smartphone -->
+
                 <div id="formulario">
                     <form action="https://formspree.io/mbjzpbnv"
                     method="POST" name="dados-contato">
-    
+
                         <h1>Entre em contato</h1>
                 
-                        <p class="nome">
-                            <input type="text" id="nomeid" placeholder="Lucas Santana" required="required" name="nome" />
-                            <label for="nome">*Nome</label>
-                        </p>
-                        <p class="fone">
-                            <input type="tel" id="foneid" placeholder="(xx) xxxxx-xxxx" name="fone" />
-                            <label for="fone">Fone</label>
-                
-                        </p>
                         <p>
-                            <input type="email" required="required" id="emailid" placeholder="fulano@email.com" name="email" />
-                            <label for="email">*Email</label>
+                            <input class="nome" type="text" id="nomeid" placeholder=" *Seu Nome" required="required" name="nome" />
                         </p>
+                    
                         <p>
-                            <textarea placeholder="Deixe sua opinião"></textarea>
+                            <input class="nome" type="email" required="required" id="emailid" placeholder=" *seuemail@email.com" name="email" />
                         </p>
+
+                        <p>
+                            <textarea placeholder=" Deixe sua mensagem"></textarea>
+                        </p>
+
                         <p class="submit">
-                            <input type="submit" onclick="Enviar();" value="Enviar" />
+                            <input type="submit" value="Enviar" />
                         </p>
                     </form><!-- Dados Contato -->
                 </div><!-- Formulário -->
-            </main><!-- Interface -->
+            </div><!-- Main -->
+
+            <div id="whatsapp">
+                <div id="logo">
+                    <img id="whats-logo" src="whatslogo.png" alt="">
+                </div>
+
+                <div id="whats-texto">
+                    <h2 id="titulo-zap">Se preferir pode me enviar uma mensagem!</h2>
+
+                    <a class="botao-zap" href="https://api.whatsapp.com/send?phone=5541991021157" target="_blank">Enviar WhatsApp</a>
+                </div>
+            </div><!-- Whatsapp -->
         </div><!-- Container -->
 
         <footer id="rodape">
@@ -103,7 +115,7 @@
 
                         <li>
                             <a href="curriculo.html">
-                                <span>Curriculo</span>
+                                <span>Currículo</span>
                                 <i class="fas fa-file"></i>
                             </a>
                         </li>
@@ -121,7 +133,7 @@
             <div class="caixa-rodape">
                 <div class="logo-rodape">
                     <a href="index.html">
-                        <img src="logo.png">
+                        <img src="logols-white.png">
                         <h2>Lucas Santana</h2>
                         <p>Desenvolvendo Ideias.</p>
                     </a>
@@ -166,10 +178,4 @@
             <p>&copy; 2020 Criado por Lucas Santana.</p>
         </div><!-- Direitos Autorais -->
     </body>
-
-    <script>
-        function Enviar(){
-            
-        }
-    </script>
 </html>

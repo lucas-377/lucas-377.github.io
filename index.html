@@ -32,7 +32,7 @@
 
                 <picture id="logo">
                     <a href="index.html">
-                    <img src="logo.png" width="50px" height="50px" alt="Logo LS"/>
+                    <img src="logols-white.png" width="50px" height="50px" alt="Logo LS"/>
                     </a>
                 </picture><!-- Logo -->
             
@@ -53,7 +53,7 @@
         <div class="container">
             <div id="banner">
                 <div id="conteudo-banner">
-                    <h1 id="titulo-center" onclick="clique()">Olá, Mundo!</h1>
+                    <h1 class="titulo-center" onclick="clique()">Olá, Mundo!</h1>
                     <p>Esse site, foi criado com o intuito de desenvolver habilidades e aprender mais sobre o desenvolvimento front-end com HTML5 e CSS3.
                     Apliquei técnicas de responsividade, para compatibilidade com diversos dispositivos e menu fixo para facilitar a navegação.
                     </p>
@@ -100,7 +100,7 @@
             <div class="caixa-rodape">
                 <div class="logo-rodape">
                     <a href="index.html">
-                        <img src="logo.png">
+                        <img src="logols-white.png">
                         <h2>Lucas Santana</h2>
                         <p>Desenvolvendo Ideias.</p>
                     </a>
@@ -146,7 +146,7 @@
         </div><!-- Direitos Autorais -->
 
         <script>
-            var easteregg = window.document.getElementById('titulo-center')
+            var easteregg = window.document.querySelector('.titulo-center')
 
             function clique(){
                 easteregg.innerHTML = 'Eu amo a Tânia <3'

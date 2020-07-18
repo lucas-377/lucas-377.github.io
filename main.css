@@ -106,7 +106,74 @@ label.logotipo a:hover {
     color: #ffffff!important;
 }
 
-/* Menu.
+/* Menu Alternativo.
+========================================================================== */
+nav#menu-alt {
+    position: fixed;
+    background-color: rgba(0,0,0, 0.2);
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Lista.
+========================================================================== */
+nav#menu-alt ul {
+    float: right;
+    margin-right: 100px;
+}
+
+/* Links.
+========================================================================== */
+nav#menu-alt ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0;
+}
+
+/* Referência dos Links.
+========================================================================== */
+nav#menu-alt ul li a {
+    color: #ffffff;
+    font-size: 13px;
+    text-transform: uppercase;
+    border-radius: 18px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    padding: 8px;
+}
+
+/* Link ativo e Mouse sobre.
+========================================================================== */
+nav#menu-alt a.ativo, nav#menu-alt a:hover {
+    border-radius: 18px;
+    border: 1px solid #ffffff;
+    color: #fff;
+    transition: .5s;
+}
+
+/* Icone da Caixa de Seleção.
+========================================================================== */
+.botaocheck {
+    font-size: 30px;
+    color: #ffffff;
+    line-height: 80px;
+    float: right;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+/* Caixa de Seleção.
+========================================================================== */
+#check {
+    display: none;
+}
+
+/* 
+
+/* menu-alt.
 ========================================================================== */
 nav#menu {
     position: fixed;
@@ -169,13 +236,15 @@ nav#menu a.ativo, nav#menu a:hover {
     display: none;
 }
 
-/* ==========================================================================
+/* 
+
+==========================================================================
 Corpo do Site.
 ========================================================================== */
 
 /* Titulos Centralizados.
 ========================================================================== */
-#titulo-center {
+.titulo-center {
     text-align: center;
     padding-bottom: 15px;
 }
@@ -281,11 +350,11 @@ Página Sobre Mim.
     font-weight: bold;
 }
 
-.blocos ul li:nth-child(1), .blocos ul li:nth-child(3), .blocos ul li:nth-child(5) {
+.blocos ul li:nth-child(1), .blocos ul li:nth-child(3), .blocos ul li:nth-child(5), .blocos ul li:nth-child(7) {
     border-right: 1px solid black;
 }
 
-.blocos ul li:nth-child(5) {
+.blocos ul li:nth-child(7) {
     padding-bottom: 15px;
 }
 
@@ -296,16 +365,16 @@ Página Sobre Mim.
 progress {
     width: 70%;
     height: 30px;
-    color: #808080;
-    background: #0d0d0d;
+    color: #acacac;
+    background: #888888;
 }
 
 ::-webkit-progress-bar {
-    background: #0d0d0d;
+    background: #acacac;
 }
 
 ::-webkit-progress-value {
-    background: #808080;
+    background: #888888;
 }
 
 /* ==========================================================================
@@ -314,18 +383,25 @@ Página Contato.
 /* Formulário.
 ========================================================================== */
 form {
-    font-family: Verdana,Tahoma,sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
-    border: 2px solid #808080;
-    max-width: 500px;
+    max-width: 700px;
+    width: 500px;
     text-transform: uppercase;
-    border-radius: 10px;
-    margin: 0 auto;
+    background-color: #1b70aa;
+    border-radius: 15px;
+}
+
+.nome {
+    max-width: 400px;
+    width: 100%;
+    height: 40px;
 }
 
 form h1 {
     text-align: center;
-    padding: 20px 0;
+    padding: 50px 0;
+    color: #fff;
 }
 
 form p {
@@ -340,15 +416,80 @@ form textarea {
     max-width: 400px;
 }
 
+#container-contato {
+    background-image: url(bg-contato.png);
+    background-position: center 250%;
+    background-repeat: no-repeat;
+    background-color: #e3e3e3;
+}
+
+#main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 120px;
+    padding-bottom: 80px;
+}
+
+#smartphone {
+    margin: 0 30px;
+}
+
+#img-topo {
+    width: 300px;
+}
+
+#formulario {
+    margin: 0 30px;
+}
+
+#whatsapp {
+    padding-bottom: 100px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+#whats-logo {
+    height: 100px;
+    margin: 0 30px;
+}
+
+#whats-texto {
+    text-align: left;
+    margin: 0 30px;
+}
+
+#titulo-zap {
+    margin-bottom: 30px;
+}
+.botao-zap {
+    background-color: rgb(135, 163, 77);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 10px;
+}
+
+.botao-zap:hover {
+    background-color: #25d366;
+    color: white;
+}
+
 /* Botão.
 ========================================================================== */
 .submit input {
-    background-color: #66FFFF;
+    background-color: #fc844d;
+    color: white;
     height: 40px;
-    width: 100px;
+    width: 300px;
     font-weight: bold;
     border-radius: 5px;
-    border: 1px solid #808080;
+    border-color: rgba(255, 255, 255, 0);
+    margin-bottom: 50px;
+}
+
+.submit input:hover {
+    background-color: #e07644;
 }
 
 /* ==========================================================================
@@ -399,13 +540,16 @@ footer#rodape h2, #rodape p {
 /* Logo.
 ========================================================================== */
 .logo-rodape {
-    width: 80%;
     text-align: center;
     margin: 0 auto;
 }
 
+.logo-rodape img {
+    width: 80px;
+}
+
 .logo-rodape h2 {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 /* Listas.
@@ -503,6 +647,27 @@ Responsividade.
         font-size: 20px;
     }
 
+    nav#menu-alt ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #0d0d0d;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+
+    nav#menu-alt ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    nav#menu-alt ul li a {
+        font-size: 20px;
+    }
+
     #check:checked ~ ul {
         left: 0;
     }
@@ -531,11 +696,6 @@ Responsividade.
 
     div#dados h1 {
         margin-bottom: 10px;
-    }
-
-    /* Planejamento */
-    #planejamento {
-        width: 70%;
     }
 
 }
@@ -571,11 +731,16 @@ Responsividade.
         border: none!important;
     }
 
-    /* Planejamento */
-    #planejamento {
-        width: 80%;
-        font-size: 8px;
+    /* Contato */
+    #main {
+        justify-content: center;
+        flex-direction: column;
     }
+
+    #container-contato {
+        background-position: center;
+    }
+
 
     /* Rodape */
     div.logo-rodape img{
