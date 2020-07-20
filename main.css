@@ -698,11 +698,29 @@ Responsividade.
         margin-bottom: 10px;
     }
 
+    /* Contato */
+    #img-topo {
+        width: 250px;
+        
+    }
+
+    form {
+        width: 300px;
+    }
+
+    form h1 {
+        padding: 20px 0;
+    }
+
+    .submit input {
+        width: 250px;
+    }
+
 }
 
 /* Smartphones.
 ========================================================================== */
-@media screen and (max-width: 426px) {
+@media screen and (max-width: 578px) {
     html, body {
         overflow-x: hidden;
     }
