@@ -702,7 +702,7 @@ Responsividade.
 
 /* Smartphones.
 ========================================================================== */
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 568px) {
     html, body {
         overflow-x: hidden;
     }
@@ -738,9 +738,34 @@ Responsividade.
     }
 
     #container-contato {
-        background-position: center;
+        background-position: center 0%;
     }
 
+    #img-topo {
+        width: 200px;
+        margin-bottom: 50px;
+    }
+
+    form {
+        width: 300px;
+    }
+
+    .submit input {
+        width: 200px;
+    }
+
+    #whatsapp {
+        flex-direction: column;
+    }
+
+    #whats-texto {
+        text-align: center;
+        margin-top: 30px;
+    }
+    
+    #titulo-zap {
+        margin-bottom: 30px;
+    }
 
     /* Rodape */
     div.logo-rodape img{
