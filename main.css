@@ -106,78 +106,11 @@ label.logotipo a:hover {
     color: #ffffff!important;
 }
 
-/* Menu Alternativo.
-========================================================================== */
-nav#menu-alt {
-    position: fixed;
-    background-color: rgba(0,0,0, 0.2);
-    top: 0;
-    left: 0;
-    height: 80px;
-    width: 100%;
-    z-index: 1;
-}
-
-/* Lista.
-========================================================================== */
-nav#menu-alt ul {
-    float: right;
-    margin-right: 100px;
-}
-
-/* Links.
-========================================================================== */
-nav#menu-alt ul li {
-    display: inline-block;
-    line-height: 80px;
-    margin: 0;
-}
-
-/* Referência dos Links.
-========================================================================== */
-nav#menu-alt ul li a {
-    color: #ffffff;
-    font-size: 13px;
-    text-transform: uppercase;
-    border-radius: 18px;
-    border: 1px solid rgba(0, 0, 0, 0);
-    padding: 8px;
-}
-
-/* Link ativo e Mouse sobre.
-========================================================================== */
-nav#menu-alt a.ativo, nav#menu-alt a:hover {
-    border-radius: 18px;
-    border: 1px solid #ffffff;
-    color: #fff;
-    transition: .5s;
-}
-
-/* Icone da Caixa de Seleção.
-========================================================================== */
-.botaocheck {
-    font-size: 30px;
-    color: #ffffff;
-    line-height: 80px;
-    float: right;
-    margin-right: 40px;
-    cursor: pointer;
-    display: none;
-}
-
-/* Caixa de Seleção.
-========================================================================== */
-#check {
-    display: none;
-}
-
-/* 
-
-/* menu-alt.
+/* Menu.
 ========================================================================== */
 nav#menu {
     position: fixed;
-    background-color: #000000;
+    background-color: rgba(0,0,0, 0.2);
     top: 0;
     left: 0;
     height: 80px;
@@ -206,6 +139,7 @@ nav#menu ul li a {
     color: #ffffff;
     font-size: 13px;
     text-transform: uppercase;
+    border-radius: 18px;
     border: 1px solid rgba(0, 0, 0, 0);
     padding: 8px;
 }
@@ -213,8 +147,9 @@ nav#menu ul li a {
 /* Link ativo e Mouse sobre.
 ========================================================================== */
 nav#menu a.ativo, nav#menu a:hover {
-    border: 1px solid #808080;
-    color: #808080;
+    border-radius: 18px;
+    border: 1px solid #ffffff;
+    color: #fff;
     transition: .5s;
 }
 
@@ -255,18 +190,22 @@ div.container {
     max-width: 1980px;
     width: 100%;
     margin: 0 auto;
-    background-color: #0d0d0d;
+    background-color: #414141;
     position: relative;
+}
+
+#main-index {
+    padding-top: 100px;
+    background-color: #7159c1;
 }
 
 /* Banner.
 ========================================================================== */
 div#banner {
-    margin-top: 80px;
+    background-color: #5f49ac;
     background: url('banner.png') no-repeat;
     background-size: cover;
-    position: relative;
-    background-position: 0 25%;
+    background-position: center 30%;
 }
 
 /* Conteudo do Banner.
@@ -275,9 +214,11 @@ div#conteudo-banner {
     position: relative;
     width: 50%;
     margin: 0 auto;
-    padding-top: 2em;
+    padding-top: 10px;
     padding-bottom: 27.5em;
     text-align: center;
+    color: white;
+    text-shadow: 1px 1px 30px black;
 }
 
 div#conteudo-banner p {
@@ -388,7 +329,7 @@ form {
     max-width: 700px;
     width: 500px;
     text-transform: uppercase;
-    background-color: #1b70aa;
+    background-color: #210B2C;
     border-radius: 15px;
 }
 
@@ -436,7 +377,7 @@ form textarea {
 }
 
 #img-topo {
-    width: 300px;
+    width: 270px;
 }
 
 #formulario {
@@ -478,7 +419,7 @@ form textarea {
 /* Botão.
 ========================================================================== */
 .submit input {
-    background-color: #fc844d;
+    background-color: #E9724C;
     color: white;
     height: 40px;
     width: 300px;
@@ -489,7 +430,7 @@ form textarea {
 }
 
 .submit input:hover {
-    background-color: #e07644;
+    background-color: rgb(197, 104, 60);
 }
 
 /* ==========================================================================
@@ -645,26 +586,27 @@ Responsividade.
 
     nav#menu ul li a {
         font-size: 20px;
+        padding: 15px;
     }
 
-    nav#menu-alt ul {
+    nav#menu ul {
         position: fixed;
         width: 100%;
         height: 100vh;
-        background: #0d0d0d;
+        background: #6952b4;
         top: 80px;
         left: -100%;
         text-align: center;
         transition: all .5s;
     }
 
-    nav#menu-alt ul li {
+    nav#menu ul li {
         display: block;
         margin: 50px 0;
         line-height: 30px;
     }
 
-    nav#menu-alt ul li a {
+    nav#menu ul li a {
         font-size: 20px;
     }
 
