@@ -636,6 +636,28 @@ Responsividade.
         padding: 15px;
     }
 
+    nav#menu-black ul {
+        position: fixed;
+        width: 100%;
+        top: 80px;
+        height: 100vh;
+        background: #6952b4;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+
+    nav#menu-black ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    nav#menu-black ul li a {
+        font-size: 20px;
+        padding: 15px;
+    }
+
     #check:checked ~ ul {
         left: 0;
     }

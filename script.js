@@ -17,6 +17,7 @@ jQuery(function () {
                 $("nav#menu-black ul li").css('line-height', '60px');
                 $("nav#menu-black ul li a").css('font-size', '11px');
                 $("nav#menu-black").css('height', '60px');
+                $("nav#menu-black ul").css('top', '60px');
             }
         }
 
@@ -36,6 +37,7 @@ jQuery(function () {
             $("nav#menu-black").css('height', '80px');
             $("nav#menu-black ul li").css('line-height', '80px');
             $("nav#menu-black ul li a").css('font-size', '13px');
+            $("nav#menu-black ul").css('top', '80px');
         }
     });
 });
