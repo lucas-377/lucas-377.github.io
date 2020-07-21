@@ -9,6 +9,10 @@ jQuery(function () {
                 $("#logo").css('width', '40px');
                 $("#logo").css('height', '40px');
                 $("#logo").css('margin-top', '9px');
+                $("label.logotipo a").css('line-height', '60px');
+                $("label.logotipo a").css('font-size', '15px');
+                $("nav#menu ul").css('top', '60px');
+                $(".botaocheck").css('line-height', '60px');
             }
         }
 
@@ -20,6 +24,10 @@ jQuery(function () {
             $("#logo").css('width', '50px');
             $("#logo").css('height', '50px');
             $("#logo").css('margin-top', '15px');
+            $("label.logotipo a").css('line-height', '80px');
+            $("label.logotipo a").css('font-size', '20px');
+            $("nav#menu ul").css('top', '80px');
+            $(".botaocheck").css('line-height', '80px');
         }
     });
 });
