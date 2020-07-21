@@ -13,6 +13,10 @@ jQuery(function () {
                 $("label.logotipo a").css('font-size', '15px');
                 $("nav#menu ul").css('top', '60px');
                 $(".botaocheck").css('line-height', '60px');
+                // Menu preto
+                $("nav#menu-black ul li").css('line-height', '60px');
+                $("nav#menu-black ul li a").css('font-size', '11px');
+                $("nav#menu-black").css('height', '60px');
             }
         }
 
@@ -28,6 +32,10 @@ jQuery(function () {
             $("label.logotipo a").css('font-size', '20px');
             $("nav#menu ul").css('top', '80px');
             $(".botaocheck").css('line-height', '80px');
+            // Menu preto
+            $("nav#menu-black").css('height', '80px');
+            $("nav#menu-black ul li").css('line-height', '80px');
+            $("nav#menu-black ul li a").css('font-size', '13px');
         }
     });
 });

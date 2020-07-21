@@ -157,6 +157,56 @@ nav#menu a.ativo, nav#menu a:hover {
     transition: .5s;
 }
 
+/* Menu Black.
+========================================================================== */
+nav#menu-black {
+    position: fixed;
+    background-color: black;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 100%;
+    z-index: 1;
+    transition: all 0.3s;
+}
+
+/* Lista.
+========================================================================== */
+nav#menu-black ul {
+    float: right;
+    margin-right: 100px;
+    transition: all 0.3s;
+}
+
+/* Links.
+========================================================================== */
+nav#menu-black ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0;
+}
+
+/* Referência dos Links.
+========================================================================== */
+nav#menu-black ul li a {
+    color: #ffffff;
+    font-size: 13px;
+    text-transform: uppercase;
+    border-radius: 18px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    padding: 8px;
+    transition: all 0.2s;
+}
+
+/* Link ativo e Mouse sobre.
+========================================================================== */
+nav#menu-black a.ativo, nav#menu-black a:hover {
+    border-radius: 18px;
+    border: 1px solid #ffffff;
+    color: #fff;
+    transition: .5s;
+}
+
 /* Icone da Caixa de Seleção.
 ========================================================================== */
 .botaocheck {
@@ -211,6 +261,7 @@ div#banner {
     background: url('banner.png') no-repeat;
     background-size: cover;
     background-position: center 20%;
+    height: 800px;
 }
 
 /* Conteudo do Banner.
@@ -239,32 +290,32 @@ Página Sobre Mim.
 .interface {
     max-width: 1200px;
     margin: 0 auto;
-    position: relative;
-    margin-top: 80px;
     width: 100%;
     padding: 2em;
     background-color: #EFEFEF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Foto do Perfil.
 ========================================================================== */
-#foto {
+#foto-perfil {
     background: url('foto-perfil.jpg') no-repeat;
     width: 250px;
     height: 250px;
     border-radius: 125px;
     background-size: contain;
-    position: relative;
-    float: left;
+    margin-top: 100px;
     margin-right: 2%;
 }
 
 /* Dados do Perfil.
 ========================================================================== */
 #dados {
-    position: relative;
-    margin-bottom: 5em;
-    clear: right;
+    margin: 50px 0;
+    text-align: center;
+    width: 72%;
 }
 
 /* Blocos da Interface.
@@ -272,9 +323,8 @@ Página Sobre Mim.
 .blocos {
     background-color: #e6e6e6;
     padding: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     border-radius: 10px;
-    position: relative;
 }
 
 /* Divisão do Resumo.
@@ -649,7 +699,9 @@ Responsividade.
 
     /* Home Page */
     div#banner {
-        background-position-y: 100px;
+        background-position-y: 200px;
+        background-size: 150%;
+        height: 500px;
     }
   
     div#conteudo-banner {
@@ -709,12 +761,12 @@ Responsividade.
 
     /* Rodape */
     div.logo-rodape img{
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
     }
 
     div.logo-rodape h2 {
-        margin-top: 10px;
+        margin-top: 8px;
     }
 
     div.logo-rodape p {
