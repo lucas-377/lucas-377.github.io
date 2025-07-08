@@ -1,15 +1,20 @@
-"use client"
+"use client";
 
-import { Moon, Sun } from "lucide-react"
-import { useTheme } from "next-themes"
-import { useI18n } from "@/app/providers"
+import { Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
+import { useI18n } from "@/app/providers";
 
-import { Button } from "@/components/ui/button"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export function ThemeToggle() {
-  const { setTheme } = useTheme()
-  const { t } = useI18n()
+  const { setTheme, theme: currentTheme } = useTheme();
+  const { t } = useI18n();
 
   return (
     <DropdownMenu>
@@ -21,10 +26,25 @@ export function ThemeToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")}>{t("theme.light")}</DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>{t("theme.dark")}</DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>{t("theme.system")}</DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() => setTheme("light")}
+          className={currentTheme === "light" ? "bg-accent" : ""}
+        >
+          {t("theme.light")}
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() => setTheme("dark")}
+          className={currentTheme === "dark" ? "bg-accent" : ""}
+        >
+          {t("theme.dark")}
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() => setTheme("system")}
+          className={currentTheme === "system" ? "bg-accent" : ""}
+        >
+          {t("theme.system")}
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  )
+  );
 }
