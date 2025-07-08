@@ -1,0 +1,311 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 24 95% 53%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 24 95% 53%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 24 95% 53%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+  }
+}
+
+@layer base {
+  * {
+    @reference border-border;
+  }
+  body {
+    @reference bg-background text-foreground;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @reference bg-muted;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary) / 0.8));
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, hsl(var(--primary) / 0.9), hsl(var(--primary)));
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Glass morphism effect */
+.glass {
+  background-color: hsl(var(--background) / 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid hsl(var(--border) / 0.5);
+}
+
+/* Orange gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #ff6b35, #f7931e, #ffaa44);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Modern card hover effect */
+.modern-card {
+  transition: all 300ms ease;
+}
+
+.modern-card:hover {
+  box-shadow: 0 25px 50px -12px hsl(24 95% 53% / 0.15);
+  transform: translateY(-4px);
+}
+
+/* Animated border */
+.animated-border {
+  position: relative;
+  overflow: hidden;
+}
+
+.animated-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ff6b35, #f7931e, transparent);
+  animation: slide 2s infinite;
+}
+
+@keyframes slide {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Floating animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Pulse animation for buttons */
+.pulse-on-hover {
+  transition: all 300ms ease;
+}
+
+.pulse-on-hover:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px hsl(24 95% 53% / 0.3);
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Improved focus styles */
+*:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* Better button transitions */
+button {
+  transition: all 200ms ease;
+}
+
+/* Enhanced card styles */
+.card-enhanced {
+  background: hsl(var(--card) / 0.95);
+  border: 1px solid hsl(var(--border) / 0.6);
+  backdrop-filter: blur(8px);
+}
+
+/* Orange gradient backgrounds */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #ffaa44 100%);
+}
+
+.bg-gradient-secondary {
+  background: linear-gradient(135deg, hsl(24 95% 53% / 0.1) 0%, hsl(24 95% 53% / 0.05) 100%);
+}
+
+.bg-gradient-hero {
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 25%, #ffaa44 50%, #ff8c42 75%, #ff6b35 100%);
+}
+
+/* Text shadows for better readability */
+.text-shadow {
+  text-shadow: 0 2px 4px hsl(var(--foreground) / 0.1);
+}
+
+/* Modern button styles */
+.btn-modern {
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  border: none;
+  box-shadow: 0 4px 15px hsl(24 95% 53% / 0.2);
+  transition: all 300ms ease;
+}
+
+.btn-modern:hover {
+  box-shadow: 0 8px 25px hsl(24 95% 53% / 0.3);
+  transform: translateY(-2px);
+}
+
+/* Improved spacing utilities */
+.section-padding {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+
+/* Animation utilities */
+.animate-in {
+  animation-fill-mode: both;
+}
+
+.fade-in {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.slide-in-from-bottom {
+  animation: slideInFromBottom 0.6s ease-out;
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover effects */
+.hover-lift {
+  transition: transform 200ms ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+.hover-glow {
+  transition: box-shadow 200ms ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px hsl(24 95% 53% / 0.2);
+}
+
+/* Orange skill bars */
+.skill-bar-orange {
+  background: linear-gradient(90deg, #ff6b35, #f7931e);
+}
+
+.skill-bar-red {
+  background: linear-gradient(90deg, #ff4757, #ff6b7a);
+}
+
+.skill-bar-blue {
+  background: linear-gradient(90deg, #3742fa, #5352ed);
+}
+
+.skill-bar-green {
+  background: linear-gradient(90deg, #2ed573, #7bed9f);
+}
+
+.skill-bar-purple {
+  background: linear-gradient(90deg, #5f27cd, #a55eea);
+}
+
+.skill-bar-yellow {
+  background: linear-gradient(90deg, #ffa502, #ff6348);
+}
+
+.skill-bar-cyan {
+  background: linear-gradient(90deg, #00d2d3, #54a0ff);
+}
+
+.skill-bar-pink {
+  background: linear-gradient(90deg, #ff3838, #ff9ff3);
+}
+
+.skill-bar-gray {
+  background: linear-gradient(90deg, #57606f, #747d8c);
+}
