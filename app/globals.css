@@ -1,5 +1,52 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-background: oklch(1 0 0);
+  --color-foreground: oklch(0.21 0.02 264.7);
+  --color-card: oklch(1 0 0);
+  --color-card-foreground: oklch(0.21 0.02 264.7);
+  --color-popover: oklch(1 0 0);
+  --color-popover-foreground: oklch(0.21 0.02 264.7);
+  --color-primary: oklch(0.72 0.21 38.7);
+  --color-primary-foreground: oklch(0.988 0.001 0);
+  --color-secondary: oklch(0.96 0.02 27.27);
+  --color-secondary-foreground: oklch(0.18 0.03 264.7);
+  --color-muted: oklch(0.978 0.012 264.7);
+  --color-muted-foreground: oklch(0.56 0.01 264.7);
+  --color-accent: oklch(0.96 0.02 27.27);
+  --color-accent-foreground: oklch(0.18 0.03 264.7);
+  --color-destructive: oklch(0.68 0.19 29.2);
+  --color-destructive-foreground: oklch(0.988 0.001 0);
+  --color-border: oklch(0.95 0.02 264.7);
+  --color-input: oklch(0.95 0.02 264.7);
+  --color-ring: oklch(0.72 0.21 38.7);
+}
+
+@layer theme {
+  .dark {
+    --color-background: oklch(0.21 0.02 264.7);
+    --color-foreground: oklch(0.988 0.001 0);
+    --color-card: oklch(0.21 0.02 264.7);
+    --color-card-foreground: oklch(0.988 0.001 0);
+    --color-popover: oklch(0.21 0.02 264.7);
+    --color-popover-foreground: oklch(0.988 0.001 0);
+    --color-primary: oklch(0.72 0.21 38.7);
+    --color-primary-foreground: oklch(0.988 0.001 0);
+    --color-secondary: oklch(0.28 0.01 264.7);
+    --color-secondary-foreground: oklch(0.988 0.001 0);
+    --color-muted: oklch(0.28 0.01 264.7);
+    --color-muted-foreground: oklch(0.68 0.02 264.7);
+    --color-accent: oklch(0.28 0.01 264.7);
+    --color-accent-foreground: oklch(0.988 0.001 0);
+    --color-destructive: oklch(0.41 0.13 29.2);
+    --color-destructive-foreground: oklch(0.988 0.001 0);
+    --color-border: oklch(0.28 0.01 264.7);
+    --color-input: oklch(0.28 0.01 264.7);
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -65,12 +112,20 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary) / 0.8));
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary)),
+    hsl(var(--primary) / 0.8)
+  );
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, hsl(var(--primary) / 0.9), hsl(var(--primary)));
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary) / 0.9),
+    hsl(var(--primary))
+  );
 }
 
 /* Smooth scrolling */
@@ -116,7 +171,13 @@ html {
   left: -100%;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #ff6b35, #f7931e, transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #ff6b35,
+    #f7931e,
+    transparent
+  );
   animation: slide 2s infinite;
 }
 
@@ -194,11 +255,22 @@ button {
 }
 
 .bg-gradient-secondary {
-  background: linear-gradient(135deg, hsl(24 95% 53% / 0.1) 0%, hsl(24 95% 53% / 0.05) 100%);
+  background: linear-gradient(
+    135deg,
+    hsl(24 95% 53% / 0.1) 0%,
+    hsl(24 95% 53% / 0.05) 100%
+  );
 }
 
 .bg-gradient-hero {
-  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 25%, #ffaa44 50%, #ff8c42 75%, #ff6b35 100%);
+  background: linear-gradient(
+    135deg,
+    #ff6b35 0%,
+    #f7931e 25%,
+    #ffaa44 50%,
+    #ff8c42 75%,
+    #ff6b35 100%
+  );
 }
 
 /* Text shadows for better readability */
@@ -271,41 +343,4 @@ button {
 
 .hover-glow:hover {
   box-shadow: 0 0 20px hsl(24 95% 53% / 0.2);
-}
-
-/* Orange skill bars */
-.skill-bar-orange {
-  background: linear-gradient(90deg, #ff6b35, #f7931e);
-}
-
-.skill-bar-red {
-  background: linear-gradient(90deg, #ff4757, #ff6b7a);
-}
-
-.skill-bar-blue {
-  background: linear-gradient(90deg, #3742fa, #5352ed);
-}
-
-.skill-bar-green {
-  background: linear-gradient(90deg, #2ed573, #7bed9f);
-}
-
-.skill-bar-purple {
-  background: linear-gradient(90deg, #5f27cd, #a55eea);
-}
-
-.skill-bar-yellow {
-  background: linear-gradient(90deg, #ffa502, #ff6348);
-}
-
-.skill-bar-cyan {
-  background: linear-gradient(90deg, #00d2d3, #54a0ff);
-}
-
-.skill-bar-pink {
-  background: linear-gradient(90deg, #ff3838, #ff9ff3);
-}
-
-.skill-bar-gray {
-  background: linear-gradient(90deg, #57606f, #747d8c);
 }

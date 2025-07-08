@@ -1,18 +1,28 @@
-"use client"
+"use client";
 
-import { memo } from "react"
-import { Button } from "@/components/ui/button"
-import { ArrowDown, Github, Linkedin, Mail, Download, ExternalLink } from "lucide-react"
-import { motion } from "framer-motion"
-import { useI18n } from "@/app/providers"
-import Image from "next/image"
+import { memo } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  ArrowDown,
+  Github,
+  Linkedin,
+  Mail,
+  Download,
+  ExternalLink,
+} from "lucide-react";
+import { motion } from "framer-motion";
+import { useI18n } from "@/app/providers";
+import Image from "next/image";
 
 const HeroSection = memo(function HeroSection() {
-  const { t, isLoading } = useI18n()
+  const { t, isLoading } = useI18n();
 
   if (isLoading) {
     return (
-      <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      <section
+        id="home"
+        className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-5xl mx-auto">
             <div className="h-8 w-64 bg-muted rounded-full animate-pulse mb-8 mx-auto" />
@@ -22,11 +32,14 @@ const HeroSection = memo(function HeroSection() {
           </div>
         </div>
       </section>
-    )
+    );
   }
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+    >
       {/* Optimized background elements */}
       <div className="absolute inset-0 -z-10" aria-hidden="true">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-orange-400/20 to-orange-600/20 rounded-full blur-3xl animate-pulse-slow" />
@@ -49,7 +62,10 @@ const HeroSection = memo(function HeroSection() {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-8"
             >
-              <span className="w-2 h-2 bg-primary rounded-full mr-2 animate-pulse" aria-hidden="true" />
+              <span
+                className="text-primary w-2 h-2 bg-primary rounded-full mr-2 animate-pulse"
+                aria-hidden="true"
+              />
               {t("hero.badge")}
             </motion.div>
 
@@ -59,7 +75,8 @@ const HeroSection = memo(function HeroSection() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
             >
-              {t("hero.title")} <span className="gradient-text">Lucas Santana</span>
+              {t("hero.title")}{" "}
+              <span className="gradient-text">Lucas Santana</span>
             </motion.h1>
 
             <motion.div
@@ -71,7 +88,9 @@ const HeroSection = memo(function HeroSection() {
               <h2 className="text-xl sm:text-3xl lg:text-4xl font-semibold text-muted-foreground mb-4">
                 {t("hero.subtitle")}
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">{t("hero.description")}</p>
+              <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
+                {t("hero.description")}
+              </p>
             </motion.div>
 
             <motion.div
@@ -80,11 +99,18 @@ const HeroSection = memo(function HeroSection() {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="flex flex-col sm:flex-row gap-4 mb-8"
             >
-              <Button size="lg" className="pulse-on-hover group bg-gradient-primary border-0">
+              <Button
+                size="lg"
+                className="pulse-on-hover group bg-gradient-primary border-0"
+              >
                 <ExternalLink className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
                 {t("hero.viewWork")}
               </Button>
-              <Button variant="outline" size="lg" className="glass pulse-on-hover group bg-transparent">
+              <Button
+                variant="outline"
+                size="lg"
+                className="glass pulse-on-hover group bg-transparent"
+              >
                 <Download className="mr-2 h-5 w-5 group-hover:translate-y-1 transition-transform" />
                 {t("hero.downloadCV")}
               </Button>
@@ -150,13 +176,15 @@ const HeroSection = memo(function HeroSection() {
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         >
           <div className="flex flex-col items-center space-y-2">
-            <span className="text-sm text-muted-foreground">{t("hero.scrollToExplore")}</span>
+            <span className="text-sm text-muted-foreground">
+              {t("hero.scrollToExplore")}
+            </span>
             <ArrowDown className="h-6 w-6 animate-bounce text-primary" />
           </div>
         </motion.div>
       </div>
     </section>
-  )
-})
+  );
+});
 
-export { HeroSection }
+export { HeroSection };

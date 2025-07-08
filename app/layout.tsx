@@ -13,7 +13,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Lucas Santana - Front-End Engineer",
   description:
-    "Engenheiro Front-End apaixonado por criar experiências de usuário excepcionais com tecnologias web modernas.",
+    "Desenvolvedor Front-End apaixonado por criar experiências de usuário incríveis com tecnologias web modernas.",
   keywords: [
     "Front-End",
     "React",
@@ -30,20 +30,19 @@ export const metadata: Metadata = {
     url: "https://lucassantana.dev",
     title: "Lucas Santana - Front-End Engineer",
     description:
-      "Engenheiro Front-End apaixonado por criar experiências de usuário excepcionais.",
+      "Desenvolvedor Front-End apaixonado por criar experiências de usuário incríveis.",
     siteName: "Lucas Santana Portfolio",
   },
   twitter: {
     card: "summary_large_image",
     title: "Lucas Santana - Front-End Engineer",
     description:
-      "Engenheiro Front-End apaixonado por criar experiências de usuário excepcionais.",
+      "Desenvolvedor Front-End apaixonado por criar experiências de usuário incríveis.",
   },
   robots: {
     index: true,
     follow: true,
   },
-  generator: "v0.dev",
 };
 
 export default function RootLayout({
