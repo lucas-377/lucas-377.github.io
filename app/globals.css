@@ -49,47 +49,47 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 24 95% 53%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 24 95% 53%;
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.21 0.02 264.7);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.21 0.02 264.7);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.21 0.02 264.7);
+    --primary: oklch(0.72 0.21 38.7);
+    --primary-foreground: oklch(0.988 0.001 0);
+    --secondary: oklch(0.96 0.02 27.27);
+    --secondary-foreground: oklch(0.18 0.03 264.7);
+    --muted: oklch(0.978 0.012 264.7);
+    --muted-foreground: oklch(0.56 0.01 264.7);
+    --accent: oklch(0.96 0.02 27.27);
+    --accent-foreground: oklch(0.18 0.03 264.7);
+    --destructive: oklch(0.68 0.19 29.2);
+    --destructive-foreground: oklch(0.988 0.001 0);
+    --border: oklch(0.95 0.02 264.7);
+    --input: oklch(0.95 0.02 264.7);
+    --ring: oklch(0.72 0.21 38.7);
     --radius: 0.75rem;
   }
 
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 24 95% 53%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
+    --background: oklch(0.21 0.02 264.7);
+    --foreground: oklch(0.988 0.001 0);
+    --card: oklch(0.21 0.02 264.7);
+    --card-foreground: oklch(0.988 0.001 0);
+    --popover: oklch(0.21 0.02 264.7);
+    --popover-foreground: oklch(0.988 0.001 0);
+    --primary: oklch(0.72 0.21 38.7);
+    --primary-foreground: oklch(0.988 0.001 0);
+    --secondary: oklch(0.28 0.01 264.7);
+    --secondary-foreground: oklch(0.988 0.001 0);
+    --muted: oklch(0.28 0.01 264.7);
+    --muted-foreground: oklch(0.68 0.02 264.7);
+    --accent: oklch(0.28 0.01 264.7);
+    --accent-foreground: oklch(0.988 0.001 0);
+    --destructive: oklch(0.41 0.13 29.2);
+    --destructive-foreground: oklch(0.988 0.001 0);
+    --border: oklch(0.28 0.01 264.7);
+    --input: oklch(0.28 0.01 264.7);
   }
 }
 
@@ -114,8 +114,8 @@
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(
     135deg,
-    hsl(var(--primary)),
-    hsl(var(--primary) / 0.8)
+    color-mix(in oklab, var(--primary) 100%, transparent),
+    color-mix(in oklab, var(--primary) 80%, transparent)
   );
   border-radius: 9999px;
 }
@@ -123,8 +123,8 @@
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(
     135deg,
-    hsl(var(--primary) / 0.9),
-    hsl(var(--primary))
+    color-mix(in oklab, var(--primary) 90%, transparent),
+    var(--primary)
   );
 }
 
@@ -135,9 +135,9 @@ html {
 
 /* Glass morphism effect */
 .glass {
-  background-color: hsl(var(--background) / 0.8);
+  background-color: color-mix(in oklab, var(--background) 80%, transparent);
   backdrop-filter: blur(12px);
-  border: 1px solid hsl(var(--border) / 0.5);
+  border: 1px solid color-mix(in oklab, var(--border) 50%, transparent);
 }
 
 /* Orange gradient text */
@@ -154,7 +154,7 @@ html {
 }
 
 .modern-card:hover {
-  box-shadow: 0 25px 50px -12px hsl(24 95% 53% / 0.15);
+  box-shadow: 0 25px 50px -12px color-mix(in oklab, var(--primary) 15%, transparent);
   transform: translateY(-4px);
 }
 
@@ -212,7 +212,7 @@ html {
 
 .pulse-on-hover:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px hsl(24 95% 53% / 0.3);
+  box-shadow: 0 0 20px color-mix(in oklab, var(--primary) 30%, transparent);
 }
 
 /* Custom animations */
@@ -233,7 +233,7 @@ html {
 
 /* Improved focus styles */
 *:focus-visible {
-  outline: 2px solid hsl(var(--ring));
+  outline: 2px solid var(--ring);
   outline-offset: 2px;
 }
 
@@ -244,8 +244,8 @@ button {
 
 /* Enhanced card styles */
 .card-enhanced {
-  background: hsl(var(--card) / 0.95);
-  border: 1px solid hsl(var(--border) / 0.6);
+  background: color-mix(in oklab, oklch(var(--card)) 95%, transparent);
+  border: 1px solid color-mix(in oklab, oklch(var(--border)) 60%, transparent);
   backdrop-filter: blur(8px);
 }
 
@@ -257,8 +257,8 @@ button {
 .bg-gradient-secondary {
   background: linear-gradient(
     135deg,
-    hsl(24 95% 53% / 0.1) 0%,
-    hsl(24 95% 53% / 0.05) 100%
+    color-mix(in oklab, var(--primary) 10%, transparent) 0%,
+    color-mix(in oklab, var(--primary) 5%, transparent) 100%
   );
 }
 
@@ -275,19 +275,19 @@ button {
 
 /* Text shadows for better readability */
 .text-shadow {
-  text-shadow: 0 2px 4px hsl(var(--foreground) / 0.1);
+  text-shadow: 0 2px 4px color-mix(in oklab, var(--foreground) 10%, transparent);
 }
 
 /* Modern button styles */
 .btn-modern {
   background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
   border: none;
-  box-shadow: 0 4px 15px hsl(24 95% 53% / 0.2);
+  box-shadow: 0 4px 15px color-mix(in oklab, var(--primary) 20%, transparent);
   transition: all 300ms ease;
 }
 
 .btn-modern:hover {
-  box-shadow: 0 8px 25px hsl(24 95% 53% / 0.3);
+  box-shadow: 0 8px 25px color-mix(in oklab, var(--primary) 30%, transparent);
   transform: translateY(-2px);
 }
 
@@ -342,5 +342,5 @@ button {
 }
 
 .hover-glow:hover {
-  box-shadow: 0 0 20px hsl(24 95% 53% / 0.2);
+  box-shadow: 0 0 20px color-mix(in oklab, var(--primary) 20%, transparent);
 }

@@ -1,7 +1,14 @@
-"use client"
+"use client";
 
-import { createContext, useContext, useState, useEffect, type ReactNode } from "react"
-import { ThemeProvider } from "@/components/theme-provider"
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  type ReactNode,
+} from "react";
+import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/sonner";
 
 // Inline translations to avoid import issues
 const translations = {
@@ -39,15 +46,18 @@ const translations = {
       features: {
         cleanCode: {
           title: "Código Limpo",
-          description: "Escrevendo código sustentável, escalável e eficiente seguindo padrões e práticas modernas.",
+          description:
+            "Escrevendo código sustentável, escalável e eficiente seguindo padrões e práticas modernas.",
         },
         pixelPerfect: {
           title: "Pixel Perfect",
-          description: "Transformando designs em interfaces pixel-perfect e responsivas com atenção a cada detalhe.",
+          description:
+            "Transformando designs em interfaces pixel-perfect e responsivas com atenção a cada detalhe.",
         },
         performance: {
           title: "Performance",
-          description: "Otimizando aplicações para velocidade, acessibilidade e experiência excepcional do usuário.",
+          description:
+            "Otimizando aplicações para velocidade, acessibilidade e experiência excepcional do usuário.",
         },
         modernStack: {
           title: "Stack Moderna",
@@ -188,7 +198,8 @@ const translations = {
         "Estou sempre aberto para discutir novas oportunidades, projetos interessantes ou apenas bater um papo sobre desenvolvimento front-end e tecnologias web modernas.",
       form: {
         title: "Me envie uma mensagem",
-        description: "Preencha o formulário abaixo e entrarei em contato o mais breve possível.",
+        description:
+          "Preencha o formulário abaixo e entrarei em contato o mais breve possível.",
         firstName: "Nome",
         lastName: "Sobrenome",
         email: "Email",
@@ -277,15 +288,18 @@ const translations = {
         },
         pixelPerfect: {
           title: "Pixel Perfect",
-          description: "Transforming designs into pixel-perfect, responsive interfaces with attention to every detail.",
+          description:
+            "Transforming designs into pixel-perfect, responsive interfaces with attention to every detail.",
         },
         performance: {
           title: "Performance",
-          description: "Optimizing applications for speed, accessibility, and exceptional user experience.",
+          description:
+            "Optimizing applications for speed, accessibility, and exceptional user experience.",
         },
         modernStack: {
           title: "Modern Stack",
-          description: "Leveraging cutting-edge technologies and frameworks to build future-ready applications.",
+          description:
+            "Leveraging cutting-edge technologies and frameworks to build future-ready applications.",
         },
       },
     },
@@ -421,7 +435,8 @@ const translations = {
         "I'm always open to discussing new opportunities, interesting projects, or just having a chat about front-end development and modern web technologies.",
       form: {
         title: "Send me a message",
-        description: "Fill out the form below and I'll get back to you as soon as possible.",
+        description:
+          "Fill out the form below and I'll get back to you as soon as possible.",
         firstName: "First Name",
         lastName: "Last Name",
         email: "Email",
@@ -510,11 +525,13 @@ const translations = {
         },
         pixelPerfect: {
           title: "Pixel Perfect",
-          description: "Transformando diseños en interfaces pixel-perfect y responsivas con atención a cada detalle.",
+          description:
+            "Transformando diseños en interfaces pixel-perfect y responsivas con atención a cada detalle.",
         },
         performance: {
           title: "Rendimiento",
-          description: "Optimizando aplicaciones para velocidad, accesibilidad y experiencia de usuario excepcional.",
+          description:
+            "Optimizando aplicaciones para velocidad, accesibilidad y experiencia de usuario excepcional.",
         },
         modernStack: {
           title: "Stack Moderno",
@@ -655,7 +672,8 @@ const translations = {
         "Siempre estoy abierto a discutir nuevas oportunidades, proyectos interesantes o simplemente charlar sobre desarrollo front-end y tecnologías web modernas.",
       form: {
         title: "Envíame un mensaje",
-        description: "Completa el formulario a continuación y me pondré en contacto contigo lo antes posible.",
+        description:
+          "Completa el formulario a continuación y me pondré en contacto contigo lo antes posible.",
         firstName: "Nombre",
         lastName: "Apellido",
         email: "Email",
@@ -705,94 +723,105 @@ const translations = {
       system: "Sistema",
     },
   },
-}
+};
 
-type Language = "pt" | "en" | "es"
+type Language = "pt" | "en" | "es";
 
 interface I18nContextType {
-  language: Language
-  setLanguage: (lang: Language) => void
-  t: (key: string) => string
-  isLoading: boolean
+  language: Language;
+  setLanguage: (lang: Language) => void;
+  t: (key: string) => string;
+  isLoading: boolean;
 }
 
-const I18nContext = createContext<I18nContextType | undefined>(undefined)
+const I18nContext = createContext<I18nContextType | undefined>(undefined);
 
 export function useI18n() {
-  const context = useContext(I18nContext)
+  const context = useContext(I18nContext);
   if (!context) {
-    throw new Error("useI18n must be used within an I18nProvider")
+    throw new Error("useI18n must be used within an I18nProvider");
   }
-  return context
+  return context;
 }
 
 function I18nProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>("pt")
-  const [isLoading, setIsLoading] = useState(true)
+  const [language, setLanguageState] = useState<Language>("pt");
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // Get saved language or detect from browser
-    const savedLanguage = localStorage.getItem("language") as Language
-    const browserLanguage = navigator.language.split("-")[0] as Language
+    const savedLanguage = localStorage.getItem("language") as Language;
+    const browserLanguage = navigator.language.split("-")[0] as Language;
 
     const defaultLanguage =
       savedLanguage && ["pt", "en", "es"].includes(savedLanguage)
         ? savedLanguage
         : ["pt", "en", "es"].includes(browserLanguage)
-          ? browserLanguage
-          : "pt"
+        ? browserLanguage
+        : "pt";
 
-    setLanguageState(defaultLanguage)
-    setIsLoading(false)
-  }, [])
+    setLanguageState(defaultLanguage);
+    setIsLoading(false);
+  }, []);
 
   const setLanguage = (lang: Language) => {
-    setLanguageState(lang)
-    localStorage.setItem("language", lang)
+    setLanguageState(lang);
+    localStorage.setItem("language", lang);
 
     // Update document language
-    document.documentElement.lang = lang === "pt" ? "pt-BR" : lang === "en" ? "en-US" : "es-ES"
-  }
+    document.documentElement.lang =
+      lang === "pt" ? "pt-BR" : lang === "en" ? "en-US" : "es-ES";
+  };
 
   const t = (key: string): string => {
-    if (isLoading) return ""
+    if (isLoading) return "";
 
-    const keys = key.split(".")
-    let value: any = translations[language]
+    const keys = key.split(".");
+    let value: any = translations[language];
 
     for (const k of keys) {
       if (value && typeof value === "object" && k in value) {
-        value = value[k]
+        value = value[k];
       } else {
         // Fallback to English
-        value = translations.en
+        value = translations.en;
         for (const fallbackKey of keys) {
           if (value && typeof value === "object" && fallbackKey in value) {
-            value = value[fallbackKey]
+            value = value[fallbackKey];
           } else {
-            return key
+            return key;
           }
         }
-        break
+        break;
       }
     }
 
-    return typeof value === "string" ? value : key
-  }
+    return typeof value === "string" ? value : key;
+  };
 
-  return <I18nContext.Provider value={{ language, setLanguage, t, isLoading }}>{children}</I18nContext.Provider>
+  return (
+    <I18nContext.Provider value={{ language, setLanguage, t, isLoading }}>
+      {children}
+    </I18nContext.Provider>
+  );
 }
 
 export const languages = [
   { code: "pt" as Language, name: "Português", flag: "🇧🇷" },
   { code: "en" as Language, name: "English", flag: "🇺🇸" },
   { code: "es" as Language, name: "Español", flag: "🇪🇸" },
-] as const
+] as const;
 
 export function Providers({ children }: { children: ReactNode }) {
   return (
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      disableTransitionOnChange
+    >
       <I18nProvider>{children}</I18nProvider>
+      <Toaster />
     </ThemeProvider>
-  )
+  );
 }

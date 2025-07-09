@@ -9,7 +9,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Globe } from "lucide-react";
-import { memo } from "react";
+import { memo, useRef } from "react";
+import { toast } from "sonner";
 
 const LanguageSwitcher = memo(function LanguageSwitcher() {
   const { language, setLanguage, isLoading } = useI18n();
@@ -49,6 +50,9 @@ const LanguageSwitcher = memo(function LanguageSwitcher() {
             key={lang.code}
             onClick={() => {
               setLanguage(lang.code);
+              toast.success("Language changed", {
+                description: `Language set to ${lang.name}`,
+              });
             }}
             className={`cursor-pointer ${
               language === lang.code ? "bg-accent" : ""

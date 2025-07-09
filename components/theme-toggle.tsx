@@ -10,6 +10,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Sun, Moon, Monitor } from "lucide-react";
+import { toast } from "sonner";
 
 export function ThemeToggle() {
   const { setTheme, theme: currentTheme, resolvedTheme } = useTheme();
@@ -42,7 +43,12 @@ export function ThemeToggle() {
       </DropdownMenuTrigger>
       <DropdownMenuContent className="min-w-32 border-border" align="end">
         <DropdownMenuItem
-          onClick={() => setTheme("light")}
+          onClick={() => {
+            setTheme("light");
+            toast.success("Theme changed", {
+              description: `Theme set to ${currentTheme}`,
+            });
+          }}
           className={`cursor-pointer ${
             currentTheme === "light" ? "bg-accent" : ""
           }`}
@@ -51,7 +57,12 @@ export function ThemeToggle() {
           <span>{t("theme.light")}</span>
         </DropdownMenuItem>
         <DropdownMenuItem
-          onClick={() => setTheme("dark")}
+          onClick={() => {
+            setTheme("dark");
+            toast.success("Theme changed", {
+              description: `Theme set to ${currentTheme}`,
+            });
+          }}
           className={`cursor-pointer ${
             currentTheme === "dark" ? "bg-accent" : ""
           }`}
@@ -60,7 +71,12 @@ export function ThemeToggle() {
           <span>{t("theme.dark")}</span>
         </DropdownMenuItem>
         <DropdownMenuItem
-          onClick={() => setTheme("system")}
+          onClick={() => {
+            setTheme("system");
+            toast.success("Theme changed", {
+              description: `Theme set to ${currentTheme}`,
+            });
+          }}
           className={`cursor-pointer ${
             currentTheme === "system" ? "bg-accent" : ""
           }`}
