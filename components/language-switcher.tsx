@@ -50,9 +50,7 @@ const LanguageSwitcher = memo(function LanguageSwitcher() {
             key={lang.code}
             onClick={() => {
               setLanguage(lang.code);
-              toast.success("Language changed", {
-                description: `Language set to ${lang.name}`,
-              });
+              toast.success(`Language set to ${lang.name}`);
             }}
             className={`cursor-pointer ${
               language === lang.code ? "bg-accent" : ""

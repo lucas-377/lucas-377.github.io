@@ -16,6 +16,26 @@ export function ThemeToggle() {
   const { setTheme, theme: currentTheme, resolvedTheme } = useTheme();
   const { t } = useI18n();
 
+  const themeOptions = [
+    {
+      value: "light",
+      icon: <Sun size={16} className="opacity-60 mr-2" aria-hidden="true" />,
+      label: t("theme.light"),
+    },
+    {
+      value: "dark",
+      icon: <Moon size={16} className="opacity-60 mr-2" aria-hidden="true" />,
+      label: t("theme.dark"),
+    },
+    {
+      value: "system",
+      icon: (
+        <Monitor size={16} className="opacity-60 mr-2" aria-hidden="true" />
+      ),
+      label: t("theme.system"),
+    },
+  ];
+
   let icon = <Monitor size={16} aria-hidden="true" />;
   if (currentTheme === "light") {
     icon = <Sun size={16} aria-hidden="true" />;
@@ -28,6 +48,11 @@ export function ThemeToggle() {
       icon = <Sun size={16} aria-hidden="true" />;
     }
   }
+
+  const handleThemeChange = (theme: string) => {
+    setTheme(theme);
+    toast.success(`Theme set to ${theme}`);
+  };
 
   return (
     <DropdownMenu>
@@ -42,48 +67,18 @@ export function ThemeToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="min-w-32 border-border" align="end">
-        <DropdownMenuItem
-          onClick={() => {
-            setTheme("light");
-            toast.success("Theme changed", {
-              description: `Theme set to ${currentTheme}`,
-            });
-          }}
-          className={`cursor-pointer ${
-            currentTheme === "light" ? "bg-accent" : ""
-          }`}
-        >
-          <Sun size={16} className="opacity-60 mr-2" aria-hidden="true" />
-          <span>{t("theme.light")}</span>
-        </DropdownMenuItem>
-        <DropdownMenuItem
-          onClick={() => {
-            setTheme("dark");
-            toast.success("Theme changed", {
-              description: `Theme set to ${currentTheme}`,
-            });
-          }}
-          className={`cursor-pointer ${
-            currentTheme === "dark" ? "bg-accent" : ""
-          }`}
-        >
-          <Moon size={16} className="opacity-60 mr-2" aria-hidden="true" />
-          <span>{t("theme.dark")}</span>
-        </DropdownMenuItem>
-        <DropdownMenuItem
-          onClick={() => {
-            setTheme("system");
-            toast.success("Theme changed", {
-              description: `Theme set to ${currentTheme}`,
-            });
-          }}
-          className={`cursor-pointer ${
-            currentTheme === "system" ? "bg-accent" : ""
-          }`}
-        >
-          <Monitor size={16} className="opacity-60 mr-2" aria-hidden="true" />
-          <span>{t("theme.system")}</span>
-        </DropdownMenuItem>
+        {themeOptions.map((option) => (
+          <DropdownMenuItem
+            key={option.value}
+            onClick={() => handleThemeChange(option.value)}
+            className={`cursor-pointer ${
+              currentTheme === option.value ? "bg-accent" : ""
+            }`}
+          >
+            {option.icon}
+            <span>{option.label}</span>
+          </DropdownMenuItem>
+        ))}
       </DropdownMenuContent>
     </DropdownMenu>
   );
