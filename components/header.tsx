@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, memo } from "react";
+import { useState, useEffect, memo, useRef } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -13,21 +13,37 @@ const Header = memo(function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { t, isLoading } = useI18n();
+  const [activeSection, setActiveSection] = useState<string>("#home");
+  const sectionIds = [
+    "#home",
+    "#about",
+    "#experience",
+    "#projects",
+    "#skills",
+    "#testimonials",
+    "#contact",
+  ];
 
   useEffect(() => {
-    let ticking = false;
-
     const handleScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          setIsScrolled(window.scrollY > 50);
-          ticking = false;
-        });
-        ticking = true;
+      setIsScrolled(window.scrollY > 50);
+      // Scroll-based active section detection
+      let current = sectionIds[0];
+      for (const id of sectionIds) {
+        const el = document.getElementById(id.replace("#", ""));
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 80) {
+            // 80px offset for header height
+            current = id;
+          }
+        }
       }
+      setActiveSection(current);
     };
-
     window.addEventListener("scroll", handleScroll, { passive: true });
+    // Run on mount in case user reloads mid-scroll
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -60,13 +76,19 @@ const Header = memo(function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-stretch h-16 space-x-8">
             {!isLoading &&
               navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-sm font-medium hover:text-primary transition-colors"
+                  className={cn(
+                    "flex items-center h-full text-sm font-medium hover:text-primary transition-colors border-b-2 border-transparent px-1",
+                    isScrolled && activeSection === item.href
+                      ? "border-primary"
+                      : "",
+                    activeSection === item.href && "text-primary"
+                  )}
                 >
                   {item.label}
                 </Link>
@@ -102,12 +124,17 @@ const Header = memo(function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="block px-3 py-2 text-base font-medium hover:text-primary transition-colors"
+                    className={cn(
+                      "block px-3 py-2 text-base font-medium hover:text-primary transition-colors border-b-2 border-transparent",
+                      activeSection === item.href &&
+                        "border-primary text-primary"
+                    )}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.label}
                   </Link>
                 ))}
+
               <div className="px-3 py-2 flex items-center space-x-2">
                 <LanguageSwitcher />
                 <ThemeToggle />
