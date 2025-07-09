@@ -32,18 +32,27 @@ const LanguageSwitcher = memo(function LanguageSwitcher() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button size="icon" variant="outline" aria-label="Select language">
+        <Button
+          size="icon"
+          variant="outline"
+          aria-label="Select language"
+          className="cursor-pointer"
+        >
           <span className="text-lg">
             {currentLanguage?.flag || <Globe size={16} aria-hidden="true" />}
           </span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="min-w-32">
+      <DropdownMenuContent className="min-w-32 border-border" align="end">
         {languages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}
-            onClick={() => setLanguage(lang.code)}
-            className={language === lang.code ? "bg-accent" : ""}
+            onClick={() => {
+              setLanguage(lang.code);
+            }}
+            className={`cursor-pointer ${
+              language === lang.code ? "bg-accent" : ""
+            }`}
           >
             <span className="mr-2 text-lg">{lang.flag}</span>
             <span>{lang.name}</span>

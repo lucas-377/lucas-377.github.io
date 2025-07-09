@@ -35,28 +35,35 @@ export function ThemeToggle() {
           size="icon"
           variant="outline"
           aria-label={t("theme.system") || "Select theme"}
+          className="cursor-pointer"
         >
           {icon}
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="min-w-32">
+      <DropdownMenuContent className="min-w-32 border-border" align="end">
         <DropdownMenuItem
           onClick={() => setTheme("light")}
-          className={currentTheme === "light" ? "bg-accent" : ""}
+          className={`cursor-pointer ${
+            currentTheme === "light" ? "bg-accent" : ""
+          }`}
         >
           <Sun size={16} className="opacity-60 mr-2" aria-hidden="true" />
           <span>{t("theme.light")}</span>
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => setTheme("dark")}
-          className={currentTheme === "dark" ? "bg-accent" : ""}
+          className={`cursor-pointer ${
+            currentTheme === "dark" ? "bg-accent" : ""
+          }`}
         >
           <Moon size={16} className="opacity-60 mr-2" aria-hidden="true" />
           <span>{t("theme.dark")}</span>
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => setTheme("system")}
-          className={currentTheme === "system" ? "bg-accent" : ""}
+          className={`cursor-pointer ${
+            currentTheme === "system" ? "bg-accent" : ""
+          }`}
         >
           <Monitor size={16} className="opacity-60 mr-2" aria-hidden="true" />
           <span>{t("theme.system")}</span>
