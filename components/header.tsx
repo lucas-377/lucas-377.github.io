@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { useI18n } from "@/app/providers";
+import Image from "next/image";
 
 const Header = memo(function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -72,7 +73,14 @@ const Header = memo(function Header() {
             href="/"
             className="text-xl font-bold hover:text-primary transition-colors"
           >
-            Portfolio
+            <Image
+              src="/logo.svg"
+              alt="LS Logo"
+              width={200}
+              height={44}
+              className="dark:[filter:invert(1)_brightness(2)]"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
