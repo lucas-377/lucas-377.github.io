@@ -12,10 +12,10 @@ export const translations = {
       hero: {
         badge: "Disponível para novas oportunidades",
         title: "Olá, eu sou",
-        subtitle: "Engenheiro Front-End",
+        subtitle: "Desenvolvedor Front-End",
         description:
-          "Engenheiro Front-End apaixonado por criar experiências de usuário excepcionais com tecnologias web modernas e código limpo e performático",
-        viewWork: "Ver Meu Trabalho",
+          "Desenvolvedor Front-End apaixonado por criar experiências de usuário incríveis, com tecnologias web modernas e código limpo e performático.",
+        viewWork: "Ver meu trabalho",
         downloadCV: "Baixar CV",
         scrollToExplore: "Role para explorar",
       },
