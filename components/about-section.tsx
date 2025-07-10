@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { memo } from "react"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Code2, Palette, Zap, Rocket } from "lucide-react"
-import { motion } from "framer-motion"
-import { useI18n } from "@/app/providers"
-import Image from "next/image"
+import { memo } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Code2, Palette, Zap, Rocket } from "lucide-react";
+import { motion } from "framer-motion";
+import { useI18n } from "@/contexts/languageContext";
+import Image from "next/image";
 
 const AboutSection = memo(function AboutSection() {
-  const { t, isLoading } = useI18n()
+  const { t, isLoading } = useI18n();
 
   if (isLoading) {
     return (
@@ -22,7 +22,7 @@ const AboutSection = memo(function AboutSection() {
           </div>
         </div>
       </section>
-    )
+    );
   }
 
   const features = [
@@ -46,7 +46,7 @@ const AboutSection = memo(function AboutSection() {
       title: t("about.features.modernStack.title"),
       description: t("about.features.modernStack.description"),
     },
-  ]
+  ];
 
   const technologies = [
     "React",
@@ -65,7 +65,7 @@ const AboutSection = memo(function AboutSection() {
     "Git",
     "Figma",
     "Adobe XD",
-  ]
+  ];
 
   return (
     <section id="about" className="py-24 bg-muted/30">
@@ -81,9 +81,12 @@ const AboutSection = memo(function AboutSection() {
             {t("about.badge")}
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-            {t("about.title")} <span className="gradient-text">{t("about.titleHighlight")}</span>
+            {t("about.title")}{" "}
+            <span className="gradient-text">{t("about.titleHighlight")}</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">{t("about.description")}</p>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            {t("about.description")}
+          </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
@@ -94,8 +97,12 @@ const AboutSection = memo(function AboutSection() {
             viewport={{ once: true }}
           >
             <div className="space-y-6 mb-10">
-              <p className="text-lg text-muted-foreground leading-relaxed">{t("about.paragraph1")}</p>
-              <p className="text-lg text-muted-foreground leading-relaxed">{t("about.paragraph2")}</p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                {t("about.paragraph1")}
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                {t("about.paragraph2")}
+              </p>
             </div>
 
             <div className="relative">
@@ -118,7 +125,9 @@ const AboutSection = memo(function AboutSection() {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-semibold mb-6">{t("about.technologiesTitle")}</h3>
+              <h3 className="text-2xl font-semibold mb-6">
+                {t("about.technologiesTitle")}
+              </h3>
               <div className="flex flex-wrap gap-3">
                 {technologies.map((tech) => (
                   <Badge
@@ -150,8 +159,12 @@ const AboutSection = memo(function AboutSection() {
                           </div>
                         </div>
                         <div>
-                          <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                          <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
+                          <h3 className="text-xl font-semibold mb-2">
+                            {feature.title}
+                          </h3>
+                          <p className="text-muted-foreground leading-relaxed">
+                            {feature.description}
+                          </p>
                         </div>
                       </div>
                     </CardContent>
@@ -163,7 +176,7 @@ const AboutSection = memo(function AboutSection() {
         </div>
       </div>
     </section>
-  )
-})
+  );
+});
 
-export { AboutSection }
+export { AboutSection };

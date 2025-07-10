@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import { memo } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { motion } from "framer-motion"
-import { useI18n } from "@/app/providers"
+import { memo } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { motion } from "framer-motion";
+import { useI18n } from "@/contexts/languageContext";
 
 const SkillsSection = memo(function SkillsSection() {
-  const { t, isLoading } = useI18n()
+  const { t, isLoading } = useI18n();
 
   if (isLoading) {
     return (
@@ -20,23 +20,46 @@ const SkillsSection = memo(function SkillsSection() {
           </div>
         </div>
       </section>
-    )
+    );
   }
 
   const skillCategories = [
     {
       title: t("skills.categories.frontend"),
-      skills: ["React", "Next.js", "TypeScript", "JavaScript", "Vue.js", "Svelte"],
+      skills: [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "JavaScript",
+        "Vue.js",
+        "Svelte",
+      ],
     },
     {
       title: t("skills.categories.styling"),
-      skills: ["Tailwind CSS", "CSS3", "Sass/SCSS", "Framer Motion", "CSS-in-JS", "Styled Components"],
+      skills: [
+        "Tailwind CSS",
+        "CSS3",
+        "Sass/SCSS",
+        "Framer Motion",
+        "CSS-in-JS",
+        "Styled Components",
+      ],
     },
     {
       title: t("skills.categories.tools"),
-      skills: ["Git", "GitHub", "Vite", "Webpack", "Figma", "Jest", "Cypress", "Docker"],
+      skills: [
+        "Git",
+        "GitHub",
+        "Vite",
+        "Webpack",
+        "Figma",
+        "Jest",
+        "Cypress",
+        "Docker",
+      ],
     },
-  ]
+  ];
 
   return (
     <section id="skills" className="py-24 bg-muted/30">
@@ -52,9 +75,12 @@ const SkillsSection = memo(function SkillsSection() {
             {t("skills.badge")}
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-            {t("skills.title")} <span className="gradient-text">{t("skills.titleHighlight")}</span>
+            {t("skills.title")}{" "}
+            <span className="gradient-text">{t("skills.titleHighlight")}</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">{t("skills.description")}</p>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            {t("skills.description")}
+          </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -99,7 +125,7 @@ const SkillsSection = memo(function SkillsSection() {
         </div>
       </div>
     </section>
-  )
-})
+  );
+});
 
-export { SkillsSection }
+export { SkillsSection };

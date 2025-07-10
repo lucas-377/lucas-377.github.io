@@ -7,7 +7,7 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LanguageSwitcher } from "@/components/language-switcher";
-import { useI18n } from "@/app/providers";
+import { useI18n } from "@/contexts/languageContext";
 import Image from "next/image";
 
 const Header = memo(function Header() {

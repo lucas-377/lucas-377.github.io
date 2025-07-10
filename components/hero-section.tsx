@@ -11,7 +11,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import { useI18n } from "@/app/providers";
+import { useI18n } from "@/contexts/languageContext";
 import Image from "next/image";
 
 const HeroSection = memo(function HeroSection() {

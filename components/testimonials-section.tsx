@@ -1,16 +1,22 @@
-"use client"
+"use client";
 
-import { memo } from "react"
-import { Card, CardContent } from "@/components/ui/card"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
-import { Quote, Star } from "lucide-react"
-import { motion } from "framer-motion"
-import { useI18n } from "@/app/providers"
-import Autoplay from "embla-carousel-autoplay"
+import { memo } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { Quote, Star } from "lucide-react";
+import { motion } from "framer-motion";
+import { useI18n } from "@/contexts/languageContext";
+import Autoplay from "embla-carousel-autoplay";
 
 const TestimonialsSection = memo(function TestimonialsSection() {
-  const { t, isLoading } = useI18n()
+  const { t, isLoading } = useI18n();
 
   const testimonials = [
     {
@@ -45,7 +51,7 @@ const TestimonialsSection = memo(function TestimonialsSection() {
       quote: t("testimonials.testimonialsList.carlos.quote"),
       rating: 5,
     },
-  ]
+  ];
 
   if (isLoading) {
     return (
@@ -58,7 +64,7 @@ const TestimonialsSection = memo(function TestimonialsSection() {
           </div>
         </div>
       </section>
-    )
+    );
   }
 
   return (
@@ -75,7 +81,10 @@ const TestimonialsSection = memo(function TestimonialsSection() {
             {t("testimonials.badge")}
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-            {t("testimonials.title")} <span className="gradient-text">{t("testimonials.titleHighlight")}</span>
+            {t("testimonials.title")}{" "}
+            <span className="gradient-text">
+              {t("testimonials.titleHighlight")}
+            </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             {t("testimonials.description")}
@@ -105,7 +114,10 @@ const TestimonialsSection = memo(function TestimonialsSection() {
           >
             <CarouselContent className="-ml-2 md:-ml-4">
               {testimonials.map((testimonial, index) => (
-                <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/1">
+                <CarouselItem
+                  key={index}
+                  className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/1"
+                >
                   <Card className="glass modern-card h-full relative">
                     <CardContent className="p-8 md:p-12 flex flex-col justify-between h-full">
                       <div className="absolute top-6 right-6">
@@ -114,9 +126,14 @@ const TestimonialsSection = memo(function TestimonialsSection() {
 
                       <div className="flex-1">
                         <div className="flex items-center justify-center gap-1 mb-6">
-                          {Array.from({ length: testimonial.rating }).map((_, i) => (
-                            <Star key={i} className="h-4 w-4 md:h-5 md:w-5 fill-primary text-primary" />
-                          ))}
+                          {Array.from({ length: testimonial.rating }).map(
+                            (_, i) => (
+                              <Star
+                                key={i}
+                                className="h-4 w-4 md:h-5 md:w-5 fill-primary text-primary"
+                              />
+                            )
+                          )}
                         </div>
 
                         <blockquote className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 italic font-light text-center">
@@ -126,7 +143,10 @@ const TestimonialsSection = memo(function TestimonialsSection() {
 
                       <div className="flex flex-col items-center gap-4">
                         <Avatar className="h-14 w-14 md:h-16 md:w-16 border-2 border-primary/20">
-                          <AvatarImage src={testimonial.image || "/placeholder.svg"} alt={testimonial.name} />
+                          <AvatarImage
+                            src={testimonial.image || "/placeholder.svg"}
+                            alt={testimonial.name}
+                          />
                           <AvatarFallback className="bg-gradient-primary text-white text-lg">
                             {testimonial.name
                               .split(" ")
@@ -135,7 +155,9 @@ const TestimonialsSection = memo(function TestimonialsSection() {
                           </AvatarFallback>
                         </Avatar>
                         <div className="text-center">
-                          <div className="font-semibold text-lg text-foreground">{testimonial.name}</div>
+                          <div className="font-semibold text-lg text-foreground">
+                            {testimonial.name}
+                          </div>
                           <div className="text-sm md:text-base text-muted-foreground">
                             {testimonial.role} • {testimonial.company}
                           </div>
@@ -160,12 +182,13 @@ const TestimonialsSection = memo(function TestimonialsSection() {
           className="text-center mt-12"
         >
           <p className="text-sm text-muted-foreground">
-            {t("testimonials.autoplayNote") || "Testimonials auto-advance every 5 seconds"}
+            {t("testimonials.autoplayNote") ||
+              "Testimonials auto-advance every 5 seconds"}
           </p>
         </motion.div>
       </div>
     </section>
-  )
-})
+  );
+});
 
-export { TestimonialsSection }
+export { TestimonialsSection };

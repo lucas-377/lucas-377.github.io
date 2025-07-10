@@ -1,6 +1,6 @@
 "use client";
 
-import { useI18n, languages } from "@/app/providers";
+import { useI18n, languages } from "@/contexts/languageContext";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,

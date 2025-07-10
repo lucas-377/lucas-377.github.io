@@ -3,7 +3,7 @@
 import { memo } from "react";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, Twitter, Heart } from "lucide-react";
-import { useI18n } from "@/app/providers";
+import { useI18n } from "@/contexts/languageContext";
 import Image from "next/image";
 
 const Footer = memo(function Footer() {

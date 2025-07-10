@@ -1,17 +1,23 @@
-"use client"
+"use client";
 
-import { memo } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { Mail, MapPin, Phone, Send, AlertCircle } from "lucide-react"
-import { motion } from "framer-motion"
-import { useI18n } from "@/app/providers"
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { z } from "zod"
+import { memo } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Mail, MapPin, Phone, Send, AlertCircle } from "lucide-react";
+import { motion } from "framer-motion";
+import { useI18n } from "@/contexts/languageContext";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 
 const contactSchema = z.object({
   firstName: z.string().min(2, "Nome deve ter pelo menos 2 caracteres"),
@@ -19,12 +25,12 @@ const contactSchema = z.object({
   email: z.string().email("Email inválido"),
   subject: z.string().min(5, "Assunto deve ter pelo menos 5 caracteres"),
   message: z.string().min(10, "Mensagem deve ter pelo menos 10 caracteres"),
-})
+});
 
-type ContactFormData = z.infer<typeof contactSchema>
+type ContactFormData = z.infer<typeof contactSchema>;
 
 const ContactSection = memo(function ContactSection() {
-  const { t, isLoading } = useI18n()
+  const { t, isLoading } = useI18n();
 
   const {
     register,
@@ -33,19 +39,19 @@ const ContactSection = memo(function ContactSection() {
     reset,
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
-  })
+  });
 
   const onSubmit = async (data: ContactFormData) => {
     try {
       // Simulate form submission
-      await new Promise((resolve) => setTimeout(resolve, 2000))
-      console.log("Form submitted:", data)
-      reset()
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+      console.log("Form submitted:", data);
+      reset();
       // You can add toast notification here
     } catch (error) {
-      console.error("Error submitting form:", error)
+      console.error("Error submitting form:", error);
     }
-  }
+  };
 
   if (isLoading) {
     return (
@@ -58,7 +64,7 @@ const ContactSection = memo(function ContactSection() {
           </div>
         </div>
       </section>
-    )
+    );
   }
 
   const contactInfo = [
@@ -80,7 +86,7 @@ const ContactSection = memo(function ContactSection() {
       value: "Pinhas, PR",
       href: "#",
     },
-  ]
+  ];
 
   return (
     <section id="contact" className="py-24 bg-muted/30">
@@ -96,9 +102,12 @@ const ContactSection = memo(function ContactSection() {
             {t("contact.badge")}
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-            {t("contact.title")} <span className="gradient-text">{t("contact.titleHighlight")}</span>
+            {t("contact.title")}{" "}
+            <span className="gradient-text">{t("contact.titleHighlight")}</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">{t("contact.description")}</p>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            {t("contact.description")}
+          </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-16">
@@ -110,19 +119,27 @@ const ContactSection = memo(function ContactSection() {
           >
             <Card className="glass modern-card">
               <CardHeader>
-                <CardTitle className="text-2xl">{t("contact.form.title")}</CardTitle>
-                <CardDescription className="text-base">{t("contact.form.description")}</CardDescription>
+                <CardTitle className="text-2xl">
+                  {t("contact.form.title")}
+                </CardTitle>
+                <CardDescription className="text-base">
+                  {t("contact.form.description")}
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="firstName">{t("contact.form.firstName")}</Label>
+                      <Label htmlFor="firstName">
+                        {t("contact.form.firstName")}
+                      </Label>
                       <Input
                         id="firstName"
                         {...register("firstName")}
                         placeholder={t("contact.form.placeholders.firstName")}
-                        className={`glass ${errors.firstName ? "border-destructive" : ""}`}
+                        className={`glass ${
+                          errors.firstName ? "border-destructive" : ""
+                        }`}
                       />
                       {errors.firstName && (
                         <div className="flex items-center gap-1 text-sm text-destructive">
@@ -132,12 +149,16 @@ const ContactSection = memo(function ContactSection() {
                       )}
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="lastName">{t("contact.form.lastName")}</Label>
+                      <Label htmlFor="lastName">
+                        {t("contact.form.lastName")}
+                      </Label>
                       <Input
                         id="lastName"
                         {...register("lastName")}
                         placeholder={t("contact.form.placeholders.lastName")}
-                        className={`glass ${errors.lastName ? "border-destructive" : ""}`}
+                        className={`glass ${
+                          errors.lastName ? "border-destructive" : ""
+                        }`}
                       />
                       {errors.lastName && (
                         <div className="flex items-center gap-1 text-sm text-destructive">
@@ -154,7 +175,9 @@ const ContactSection = memo(function ContactSection() {
                       type="email"
                       {...register("email")}
                       placeholder={t("contact.form.placeholders.email")}
-                      className={`glass ${errors.email ? "border-destructive" : ""}`}
+                      className={`glass ${
+                        errors.email ? "border-destructive" : ""
+                      }`}
                     />
                     {errors.email && (
                       <div className="flex items-center gap-1 text-sm text-destructive">
@@ -169,7 +192,9 @@ const ContactSection = memo(function ContactSection() {
                       id="subject"
                       {...register("subject")}
                       placeholder={t("contact.form.placeholders.subject")}
-                      className={`glass ${errors.subject ? "border-destructive" : ""}`}
+                      className={`glass ${
+                        errors.subject ? "border-destructive" : ""
+                      }`}
                     />
                     {errors.subject && (
                       <div className="flex items-center gap-1 text-sm text-destructive">
@@ -184,7 +209,9 @@ const ContactSection = memo(function ContactSection() {
                       id="message"
                       {...register("message")}
                       placeholder={t("contact.form.messagePlaceholder")}
-                      className={`min-h-[120px] glass ${errors.message ? "border-destructive" : ""}`}
+                      className={`min-h-[120px] glass ${
+                        errors.message ? "border-destructive" : ""
+                      }`}
                     />
                     {errors.message && (
                       <div className="flex items-center gap-1 text-sm text-destructive">
@@ -214,8 +241,12 @@ const ContactSection = memo(function ContactSection() {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-3xl font-semibold mb-6">{t("contact.info.title")}</h3>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">{t("contact.info.description")}</p>
+              <h3 className="text-3xl font-semibold mb-6">
+                {t("contact.info.title")}
+              </h3>
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                {t("contact.info.description")}
+              </p>
             </div>
 
             <div className="space-y-6">
@@ -236,7 +267,9 @@ const ContactSection = memo(function ContactSection() {
                           </div>
                         </div>
                         <div>
-                          <h4 className="font-semibold text-lg">{info.title}</h4>
+                          <h4 className="font-semibold text-lg">
+                            {info.title}
+                          </h4>
                           <a
                             href={info.href}
                             className="text-muted-foreground hover:text-primary transition-colors text-base"
@@ -253,15 +286,19 @@ const ContactSection = memo(function ContactSection() {
 
             <Card className="bg-gradient-primary text-white glass border-0">
               <CardContent className="p-8">
-                <h4 className="font-semibold text-xl mb-3">{t("contact.availability.title")}</h4>
-                <p className="text-white/90 text-base leading-relaxed">{t("contact.availability.description")}</p>
+                <h4 className="font-semibold text-xl mb-3">
+                  {t("contact.availability.title")}
+                </h4>
+                <p className="text-white/90 text-base leading-relaxed">
+                  {t("contact.availability.description")}
+                </p>
               </CardContent>
             </Card>
           </motion.div>
         </div>
       </div>
     </section>
-  )
-})
+  );
+});
 
-export { ContactSection }
+export { ContactSection };

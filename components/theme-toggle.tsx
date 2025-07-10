@@ -1,7 +1,7 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { useI18n } from "@/app/providers";
+import { useI18n } from "@/contexts/languageContext";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,

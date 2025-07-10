@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import { memo } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { ExternalLink, MapPin, Calendar } from "lucide-react"
-import { motion } from "framer-motion"
-import Image from "next/image"
-import { useI18n } from "@/app/providers"
+import { memo } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { ExternalLink, MapPin, Calendar } from "lucide-react";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { useI18n } from "@/contexts/languageContext";
 
 const ExperienceSection = memo(function ExperienceSection() {
-  const { t, isLoading } = useI18n()
+  const { t, isLoading } = useI18n();
 
   if (isLoading) {
     return (
@@ -23,7 +23,7 @@ const ExperienceSection = memo(function ExperienceSection() {
           </div>
         </div>
       </section>
-    )
+    );
   }
 
   const experiences = [
@@ -96,7 +96,7 @@ const ExperienceSection = memo(function ExperienceSection() {
       ],
       current: false,
     },
-  ]
+  ];
 
   return (
     <section id="experience" className="py-24 bg-muted/30">
@@ -112,7 +112,10 @@ const ExperienceSection = memo(function ExperienceSection() {
             {t("experience.badge")}
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-            {t("experience.title")} <span className="gradient-text">{t("experience.titleHighlight")}</span>
+            {t("experience.title")}{" "}
+            <span className="gradient-text">
+              {t("experience.titleHighlight")}
+            </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             {t("experience.description")}
@@ -128,7 +131,11 @@ const ExperienceSection = memo(function ExperienceSection() {
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className={`glass modern-card ${exp.current ? "border-primary/20 animated-border" : ""}`}>
+              <Card
+                className={`glass modern-card ${
+                  exp.current ? "border-primary/20 animated-border" : ""
+                }`}
+              >
                 <CardHeader>
                   <div className="flex flex-col md:flex-row md:items-center gap-6">
                     <div className="flex items-center gap-4">
@@ -153,7 +160,9 @@ const ExperienceSection = memo(function ExperienceSection() {
                             </Badge>
                           )}
                         </CardTitle>
-                        <div className="text-lg font-semibold text-primary mt-1">{exp.role}</div>
+                        <div className="text-lg font-semibold text-primary mt-1">
+                          {exp.role}
+                        </div>
                       </div>
                     </div>
                     <div className="flex flex-col md:items-end gap-2 md:ml-auto">
@@ -169,22 +178,30 @@ const ExperienceSection = memo(function ExperienceSection() {
                   </div>
                 </CardHeader>
                 <CardContent className="space-y-6">
-                  <p className="text-muted-foreground leading-relaxed">{exp.description}</p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {exp.description}
+                  </p>
 
                   <div>
-                    <h4 className="font-semibold mb-3">{t("experience.achievements")}:</h4>
+                    <h4 className="font-semibold mb-3">
+                      {t("experience.achievements")}:
+                    </h4>
                     <ul className="space-y-2">
                       {exp.achievements.map((achievement, i) => (
                         <li key={i} className="flex items-start gap-3">
                           <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                          <span className="text-muted-foreground">{achievement}</span>
+                          <span className="text-muted-foreground">
+                            {achievement}
+                          </span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
                   <div>
-                    <h4 className="font-semibold mb-3">{t("experience.technologies")}:</h4>
+                    <h4 className="font-semibold mb-3">
+                      {t("experience.technologies")}:
+                    </h4>
                     <div className="flex flex-wrap gap-2">
                       {exp.technologies.map((tech) => (
                         <Badge
@@ -200,7 +217,9 @@ const ExperienceSection = memo(function ExperienceSection() {
 
                   {exp.projects.length > 0 && (
                     <div>
-                      <h4 className="font-semibold mb-3">{t("experience.projects")}:</h4>
+                      <h4 className="font-semibold mb-3">
+                        {t("experience.projects")}:
+                      </h4>
                       <div className="flex flex-wrap gap-3">
                         {exp.projects.map((project, i) => (
                           <Button
@@ -210,7 +229,11 @@ const ExperienceSection = memo(function ExperienceSection() {
                             className="glass pulse-on-hover group bg-transparent"
                             asChild
                           >
-                            <a href={project.url} target="_blank" rel="noopener noreferrer">
+                            <a
+                              href={project.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
                               <ExternalLink className="h-4 w-4 mr-2 group-hover:translate-x-1 transition-transform" />
                               {project.name}
                             </a>
@@ -226,7 +249,7 @@ const ExperienceSection = memo(function ExperienceSection() {
         </div>
       </div>
     </section>
-  )
-})
+  );
+});
 
-export { ExperienceSection }
+export { ExperienceSection };

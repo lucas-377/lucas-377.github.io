@@ -1,16 +1,21 @@
-"use client"
+"use client";
 
-import { memo } from "react"
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { ExternalLink, Github } from "lucide-react"
-import { motion } from "framer-motion"
-import Image from "next/image"
-import { useI18n } from "@/app/providers"
+import { memo } from "react";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { ExternalLink, Github } from "lucide-react";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { useI18n } from "@/contexts/languageContext";
 
 const ProjectsSection = memo(function ProjectsSection() {
-  const { t, isLoading } = useI18n()
+  const { t, isLoading } = useI18n();
 
   if (isLoading) {
     return (
@@ -23,7 +28,7 @@ const ProjectsSection = memo(function ProjectsSection() {
           </div>
         </div>
       </section>
-    )
+    );
   }
 
   const projects = [
@@ -63,7 +68,7 @@ const ProjectsSection = memo(function ProjectsSection() {
       githubUrl: "#",
       featured: false,
     },
-  ]
+  ];
 
   return (
     <section id="projects" className="py-24">
@@ -79,9 +84,14 @@ const ProjectsSection = memo(function ProjectsSection() {
             {t("projects.badge")}
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-            {t("projects.title")} <span className="gradient-text">{t("projects.titleHighlight")}</span>
+            {t("projects.title")}{" "}
+            <span className="gradient-text">
+              {t("projects.titleHighlight")}
+            </span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">{t("projects.description")}</p>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            {t("projects.description")}
+          </p>
         </motion.div>
 
         <div className="grid gap-8">
@@ -94,9 +104,15 @@ const ProjectsSection = memo(function ProjectsSection() {
               viewport={{ once: true }}
             >
               <Card
-                className={`overflow-hidden modern-card glass ${project.featured ? "border-primary/20 animated-border" : ""}`}
+                className={`overflow-hidden modern-card glass ${
+                  project.featured ? "border-primary/20 animated-border" : ""
+                }`}
               >
-                <div className={`grid ${project.featured ? "lg:grid-cols-2" : "md:grid-cols-2"} gap-0`}>
+                <div
+                  className={`grid ${
+                    project.featured ? "lg:grid-cols-2" : "md:grid-cols-2"
+                  } gap-0`}
+                >
                   <div className="relative overflow-hidden group">
                     <Image
                       src={project.image || "/placeholder.svg"}
@@ -118,7 +134,9 @@ const ProjectsSection = memo(function ProjectsSection() {
                         <CardTitle className="text-2xl mb-3 group-hover:text-primary transition-colors">
                           {project.title}
                         </CardTitle>
-                        <CardDescription className="text-base leading-relaxed">{project.description}</CardDescription>
+                        <CardDescription className="text-base leading-relaxed">
+                          {project.description}
+                        </CardDescription>
                       </CardHeader>
                       <div className="flex flex-wrap gap-2 mb-8">
                         {project.technologies.map((tech) => (
@@ -133,11 +151,18 @@ const ProjectsSection = memo(function ProjectsSection() {
                       </div>
                     </div>
                     <div className="flex gap-4">
-                      <Button variant="outline" size="sm" className="flex-1 glass pulse-on-hover group bg-transparent">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="flex-1 glass pulse-on-hover group bg-transparent"
+                      >
                         <Github className="h-4 w-4 mr-2 group-hover:rotate-12 transition-transform" />
                         {t("projects.code")}
                       </Button>
-                      <Button size="sm" className="flex-1 pulse-on-hover group bg-gradient-primary border-0">
+                      <Button
+                        size="sm"
+                        className="flex-1 pulse-on-hover group bg-gradient-primary border-0"
+                      >
                         <ExternalLink className="h-4 w-4 mr-2 group-hover:translate-x-1 transition-transform" />
                         {t("projects.liveDemo")}
                       </Button>
@@ -156,14 +181,18 @@ const ProjectsSection = memo(function ProjectsSection() {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <Button variant="outline" size="lg" className="glass pulse-on-hover bg-transparent">
+          <Button
+            variant="outline"
+            size="lg"
+            className="glass pulse-on-hover bg-transparent"
+          >
             <Github className="mr-2 h-5 w-5" />
             {t("projects.viewAllProjects")}
           </Button>
         </motion.div>
       </div>
     </section>
-  )
-})
+  );
+});
 
-export { ProjectsSection }
+export { ProjectsSection };
