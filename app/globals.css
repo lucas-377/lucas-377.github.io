@@ -344,3 +344,11 @@ button {
 .hover-glow:hover {
   box-shadow: 0 0 20px color-mix(in oklab, var(--primary) 20%, transparent);
 }
+
+/* Sonner */
+.toaster [data-sonner-toast][data-styled="true"] {
+  background-color: color-mix(in oklab, var(--background) 80%, transparent);
+  backdrop-filter: blur(12px);
+  border: 1px solid color-mix(in oklab, var(--border) 50%, transparent);
+  box-shadow: 0 8px 32px 0 color-mix(in oklab, var(--primary) 10%, transparent);
+}

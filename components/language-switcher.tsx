@@ -9,11 +9,24 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Globe } from "lucide-react";
-import { memo, useRef } from "react";
+import { memo, useRef, useState, useEffect } from "react";
 import { toast } from "sonner";
 
 const LanguageSwitcher = memo(function LanguageSwitcher() {
-  const { language, setLanguage, isLoading } = useI18n();
+  const { t, language, setLanguage, isLoading } = useI18n();
+  const [pendingLanguage, setPendingLanguage] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (pendingLanguage && language === pendingLanguage) {
+      const lang = languages.find((l) => l.code === language);
+      if (lang) {
+        toast.success(
+          t("toast.languageSet").replace("{language}", t(lang.name))
+        );
+      }
+      setPendingLanguage(null);
+    }
+  }, [language, pendingLanguage, t]);
 
   if (isLoading) {
     return (
@@ -50,7 +63,7 @@ const LanguageSwitcher = memo(function LanguageSwitcher() {
             key={lang.code}
             onClick={() => {
               setLanguage(lang.code);
-              toast.success(`Language set to ${lang.name}`);
+              setPendingLanguage(lang.code);
             }}
             className={`cursor-pointer ${
               language === lang.code ? "bg-accent" : ""

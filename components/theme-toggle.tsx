@@ -14,7 +14,7 @@ import { toast } from "sonner";
 
 export function ThemeToggle() {
   const { setTheme, theme: currentTheme, resolvedTheme } = useTheme();
-  const { t } = useI18n();
+  const { t, isLoading } = useI18n();
 
   const themeOptions = [
     {
@@ -51,7 +51,7 @@ export function ThemeToggle() {
 
   const handleThemeChange = (theme: string) => {
     setTheme(theme);
-    toast.success(`Theme set to ${theme}`);
+    toast.success(t("toast.themeSet").replace("{theme}", t(`theme.${theme}`)));
   };
 
   return (
@@ -62,6 +62,7 @@ export function ThemeToggle() {
           variant="outline"
           aria-label={t("theme.system") || "Select theme"}
           className="cursor-pointer"
+          disabled={isLoading}
         >
           {icon}
         </Button>

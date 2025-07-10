@@ -248,6 +248,10 @@ const translations = {
       dark: "Escuro",
       system: "Sistema",
     },
+    toast: {
+      themeSet: "Tema definido para {theme}",
+      languageSet: "Idioma definido para {language}",
+    },
   },
   en: {
     nav: {
@@ -485,6 +489,10 @@ const translations = {
       dark: "Dark",
       system: "System",
     },
+    toast: {
+      themeSet: "Theme set to {theme}",
+      languageSet: "Language set to {language}",
+    },
   },
   es: {
     nav: {
@@ -721,6 +729,10 @@ const translations = {
       light: "Claro",
       dark: "Oscuro",
       system: "Sistema",
+    },
+    toast: {
+      themeSet: "Tema establecido en {theme}",
+      languageSet: "Idioma establecido en {language}",
     },
   },
 };
