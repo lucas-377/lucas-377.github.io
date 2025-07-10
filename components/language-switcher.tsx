@@ -46,12 +46,7 @@ const LanguageSwitcher = memo(function LanguageSwitcher() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button
-          size="icon"
-          variant="outline"
-          aria-label="Select language"
-          className="cursor-pointer"
-        >
+        <Button size="icon" variant="outline" aria-label="Select language">
           <span className="text-lg">
             {currentLanguage?.flag || <Globe size={16} aria-hidden="true" />}
           </span>

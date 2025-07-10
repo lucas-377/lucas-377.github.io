@@ -61,7 +61,6 @@ export function ThemeToggle() {
           size="icon"
           variant="outline"
           aria-label={t("theme.system") || "Select theme"}
-          className="cursor-pointer"
           disabled={isLoading}
         >
           {icon}
