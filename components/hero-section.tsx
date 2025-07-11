@@ -16,7 +16,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const HeroSection = memo(function HeroSection() {
-  const { t, isLoading } = useI18n();
+  const { t, language, isLoading } = useI18n();
 
   if (isLoading) {
     return (
@@ -114,7 +114,10 @@ const HeroSection = memo(function HeroSection() {
                   className="glass pulse-on-hover group bg-transparent"
                   asChild
                 >
-                  <Link href="/files/curriculo-lucas-santana-pt.pdf" download>
+                  <Link
+                    href={`/files/curriculo-lucas-santana-${language}.pdf`}
+                    download
+                  >
                     <Download className="mr-2 h-5 w-5" />
                     {t("hero.downloadCV")}
                   </Link>

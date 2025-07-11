@@ -24,7 +24,7 @@ export const translations = {
         title: "Criando Experiências",
         titleHighlight: "Digitais",
         description:
-          "Sou um engenheiro front-end apaixonado com expertise em criar aplicações web modernas e responsivas. Adoro transformar designs em experiências interativas e pixel-perfect que os usuários adoram.",
+          "Sou um desenvolvedor front-end apaixonado, com expertise em criar aplicações web modernas e responsivas. Adoro transformar designs em experiências interativas e pixel-perfect que os usuários adoram.",
         paragraph1:
           "Minha jornada no desenvolvimento front-end começou com um fascínio por como design e código se unem para criar experiências incríveis para o usuário. Desde então, me especializei em React, Next.js e frameworks CSS modernos, sempre me mantendo atualizado com as últimas tecnologias e melhores práticas.",
         paragraph2:
@@ -255,8 +255,8 @@ export const translations = {
         title: "Hi, I'm",
         subtitle: "Front-End Engineer",
         description:
-          "Front-End Engineer passionate about creating exceptional user experiences with modern web technologies and clean, performant code",
-        viewWork: "View My Work",
+          "Front-End Engineer passionate about creating incredible user experiences, with modern web technologies and clean, performant code.",
+        viewWork: "View my work",
         downloadCV: "Download CV",
         scrollToExplore: "Scroll to explore",
       },
@@ -496,8 +496,8 @@ export const translations = {
         title: "Hola, soy",
         subtitle: "Ingeniero Front-End",
         description:
-          "Ingeniero Front-End apasionado por crear experiencias de usuario excepcionales con tecnologías web modernas y código limpio y eficiente",
-        viewWork: "Ver Mi Trabajo",
+          "Ingeniero Front-End apasionado por crear experiencias de usuario increíbles, con tecnologías web modernas y código limpio y eficiente.",
+        viewWork: "Ver mi trabajo",
         downloadCV: "Descargar CV",
         scrollToExplore: "Desplázate para explorar",
       },
