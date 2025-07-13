@@ -32,11 +32,6 @@ const AboutSection = memo(function AboutSection() {
       description: t("about.features.cleanCode.description"),
     },
     {
-      icon: Palette,
-      title: t("about.features.pixelPerfect.title"),
-      description: t("about.features.pixelPerfect.description"),
-    },
-    {
       icon: Zap,
       title: t("about.features.performance.title"),
       description: t("about.features.performance.description"),
@@ -53,18 +48,23 @@ const AboutSection = memo(function AboutSection() {
     "Next.js",
     "TypeScript",
     "JavaScript",
+    "PHP",
     "Tailwind CSS",
-    "CSS3",
-    "HTML5",
+    "Prime React",
+    "Bootstrap",
+    "Styled Components",
     "Sass/SCSS",
     "Framer Motion",
     "React Query",
-    "Zustand",
+    "React Hook Form",
+    "Zod",
     "Vite",
-    "Webpack",
     "Git",
+    "Github",
     "Figma",
     "Adobe XD",
+    "Adobe Photoshop",
+    "Adobe Illustrator",
   ];
 
   return (
@@ -105,12 +105,12 @@ const AboutSection = memo(function AboutSection() {
               </p>
             </div>
 
-            <div className="relative">
+            <div className="relative" style={{ maxWidth: "400px" }}>
               <Image
-                src="/placeholder.svg?height=400&width=600"
-                alt="Workspace setup"
-                width={600}
-                height={400}
+                src="/me2.jpg"
+                alt="Me"
+                width={400}
+                height={600}
                 className="rounded-lg shadow-lg"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg"></div>

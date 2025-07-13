@@ -20,26 +20,21 @@ export const translations = {
         scrollToExplore: "Role para explorar",
       },
       about: {
-        badge: "Sobre Mim",
-        title: "Criando Experiências",
-        titleHighlight: "Digitais",
+        badge: "Sobre mim",
+        title: "Criando experiências",
+        titleHighlight: "digitais",
         description:
-          "Sou um desenvolvedor front-end apaixonado, com expertise em criar aplicações web modernas e responsivas. Adoro transformar designs em experiências interativas e pixel-perfect que os usuários adoram.",
+          "Sou um desenvolvedor front-end com foco em criação de interfaces eficientes, acessíveis e otimizadas para SEO.",
         paragraph1:
           "Minha jornada no desenvolvimento front-end começou com um fascínio por como design e código se unem para criar experiências incríveis para o usuário. Desde então, me especializei em React, Next.js e frameworks CSS modernos, sempre me mantendo atualizado com as últimas tecnologias e melhores práticas.",
         paragraph2:
-          "Foco em escrever código limpo e sustentável, garantindo performance e acessibilidade ideais. Quando não estou codando, você pode me encontrar explorando novos frameworks front-end, contribuindo para projetos open source ou compartilhando conhecimento com a comunidade de desenvolvedores.",
+          "Quando não estou codando, você pode me encontrar apreciando boas músicas, fazendo trilhas na natureza ou degustando boas cervejas.",
         technologiesTitle: "Tecnologias com as quais trabalho",
         features: {
           cleanCode: {
             title: "Código Limpo",
             description:
               "Escrevendo código sustentável, escalável e eficiente seguindo padrões e práticas modernas.",
-          },
-          pixelPerfect: {
-            title: "Pixel Perfect",
-            description:
-              "Transformando designs em interfaces pixel-perfect e responsivas com atenção a cada detalhe.",
           },
           performance: {
             title: "Performance",
@@ -54,50 +49,52 @@ export const translations = {
         },
       },
       experience: {
-        badge: "Minha Jornada",
+        badge: "Minha jornada",
         title: "Experiência",
-        titleHighlight: "Profissional",
+        titleHighlight: "profissional",
         description:
           "Minha trajetória profissional inclui trabalhos em empresas de diferentes portes, desde startups até grandes corporações, sempre focando em entregar soluções de alta qualidade.",
         current: "Atual",
-        achievements: "Principais Conquistas",
-        technologies: "Tecnologias Utilizadas",
-        projects: "Projetos Públicos",
+        achievements: "Principais conquistas",
+        technologies: "Tecnologias utilizadas",
+        projects: "Projetos públicos",
         experienceList: {
-          techcorp: {
-            role: "Desenvolvedor Front-End Sênior",
-            period: "Jan 2023 - Presente",
+          leme: {
+            role: "Desenvolvedor Front-End",
+            period: "Jul 2021 - Presente",
             description:
               "Lidero o desenvolvimento de interfaces modernas e responsivas para aplicações web de grande escala, trabalhando em estreita colaboração com equipes de design e back-end.",
             achievements: [
-              "Desenvolvi e mantive 5+ aplicações React de alta performance",
+              "Desenvolvi e mantive 3+ aplicações React/Next.js de alta performance",
               "Implementei sistema de design que reduziu tempo de desenvolvimento em 40%",
-              "Mentorei 3 desenvolvedores júnior e conduzi code reviews",
-              "Otimizei performance das aplicações, melhorando Core Web Vitals em 60%",
+              "Mentorei 1 desenvolvedor júnior e conduzi code reviews",
+              "Implementei biblioteca de componentes reutilizáveis",
+              "Otimizei a performance das aplicações, melhorando o Core Web Vitals em 60%",
+              "Implementei testes A/B",
             ],
           },
-          startupxyz: {
+          red: {
             role: "Desenvolvedor Front-End",
-            period: "Mar 2021 - Dez 2022",
+            period: "2020 - 2021",
             description:
-              "Responsável pelo desenvolvimento completo do front-end de uma plataforma SaaS, desde o protótipo até a produção, trabalhando em um ambiente ágil e dinâmico.",
+              "Responsável pelo desenvolvimento completo do front-end de websites, desde o protótipo até a produção, trabalhando em um ambiente ágil e dinâmico.",
             achievements: [
-              "Construí do zero a interface de uma plataforma SaaS com Vue.js",
-              "Implementei testes automatizados que cobriram 85% do código",
-              "Colaborei diretamente com UX/UI designers para implementar designs pixel-perfect",
+              "Construí do zero websites de clientes da agência",
+              "Implementei biblioteca de componentes reutilizáveis",
               "Reduzi o tempo de carregamento das páginas em 50% através de otimizações",
+              "Desenvolvi projeto base para websites, reduzindo o tempo de desenvolvimento em 30%",
             ],
           },
           freelance: {
             role: "Desenvolvedor Front-End Freelancer",
-            period: "Jan 2020 - Mar 2021",
+            period: "Presente",
             location: "Remoto",
             description:
               "Prestei serviços de desenvolvimento front-end para diversos clientes, criando sites institucionais, e-commerces e aplicações web personalizadas.",
             achievements: [
-              "Entreguei 15+ projetos para clientes de diferentes segmentos",
+              "Entreguei 5+ projetos para clientes de diferentes segmentos",
               "Mantive taxa de satisfação de 100% dos clientes",
-              "Desenvolvi soluções personalizadas em WordPress e React",
+              "Desenvolvi soluções personalizadas em tecnologias diversas",
             ],
           },
         },
@@ -166,15 +163,15 @@ export const translations = {
         },
       },
       skills: {
-        badge: "Habilidades e Expertise",
+        badge: "Habilidades e expertise",
         title: "Habilidades",
-        titleHighlight: "Técnicas",
+        titleHighlight: "técnicas",
         description:
-          "Aqui está uma visão geral das minhas habilidades técnicas e níveis de proficiência em diferentes tecnologias e ferramentas de front-end.",
+          "Aqui está uma visão geral das minhas habilidades técnicas em diferentes tecnologias e ferramentas de front-end.",
         categories: {
           frontend: "Frameworks Frontend",
-          styling: "Estilização e Animação",
-          tools: "Ferramentas e Fluxo de Trabalho",
+          styling: "Estilização e animação",
+          tools: "Ferramentas e fluxo de Trabalho",
         },
       },
       contact: {

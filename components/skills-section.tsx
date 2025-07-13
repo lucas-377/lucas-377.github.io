@@ -32,7 +32,8 @@ const SkillsSection = memo(function SkillsSection() {
         "TypeScript",
         "JavaScript",
         "Vue.js",
-        "Svelte",
+        "Yii2",
+        "Wordpress",
       ],
     },
     {
@@ -42,22 +43,15 @@ const SkillsSection = memo(function SkillsSection() {
         "CSS3",
         "Sass/SCSS",
         "Framer Motion",
-        "CSS-in-JS",
+        "Bootstrap",
+        "PrimeReact",
         "Styled Components",
+        "Shadcn/UI",
       ],
     },
     {
       title: t("skills.categories.tools"),
-      skills: [
-        "Git",
-        "GitHub",
-        "Vite",
-        "Webpack",
-        "Figma",
-        "Jest",
-        "Cypress",
-        "Docker",
-      ],
+      skills: ["Git", "GitHub", "Vite", "Adobe XD", "Figma", "Jest", "Cypress"],
     },
   ];
 
