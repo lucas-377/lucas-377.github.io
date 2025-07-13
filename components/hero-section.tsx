@@ -1,6 +1,6 @@
 "use client";
 
-import { memo } from "react";
+import { memo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   ArrowDown,
@@ -10,13 +10,19 @@ import {
   Download,
   ExternalLink,
 } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useI18n } from "@/contexts/languageContext";
 import Image from "next/image";
 import Link from "next/link";
+import { DonutMinigame } from "@/components/donut-minigame";
 
 const HeroSection = memo(function HeroSection() {
   const { t, language, isLoading } = useI18n();
+  const [showMinigame, setShowMinigame] = useState(false);
+
+  const handleImageDoubleClick = () => {
+    setShowMinigame(true);
+  };
 
   if (isLoading) {
     return (
@@ -189,6 +195,7 @@ const HeroSection = memo(function HeroSection() {
                   height={500}
                   className="relative z-10 w-full h-auto rounded-full border-4 border-primary/20 shadow-2xl"
                   priority
+                  onDoubleClick={handleImageDoubleClick}
                 />
               </div>
             </motion.div>
@@ -210,6 +217,12 @@ const HeroSection = memo(function HeroSection() {
           <ArrowDown className="h-6 w-6 animate-bounce text-primary" />
         </div>
       </motion.div>
+
+      <AnimatePresence>
+        {showMinigame && (
+          <DonutMinigame onClose={() => setShowMinigame(false)} />
+        )}
+      </AnimatePresence>
     </section>
   );
 });
