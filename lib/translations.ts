@@ -149,9 +149,9 @@ export const translations = {
         description:
           "Aqui está uma visão geral das minhas habilidades técnicas em diferentes tecnologias e ferramentas de front-end.",
         categories: {
-          frontend: "Frameworks Frontend",
+          frontend: "Frameworks Front-end",
           styling: "Estilização e animação",
-          tools: "Ferramentas e fluxo de Trabalho",
+          tools: "Ferramentas e fluxo de trabalho",
         },
       },
       testimonials: {
@@ -162,25 +162,10 @@ export const translations = {
           "Feedback de colegas de trabalho, gestores e clientes com quem tive o prazer de trabalhar ao longo da minha carreira.",
         autoplayNote: "Os depoimentos avançam automaticamente a cada 5 segundos",
         testimonialsList: {
-          maria: {
+          williamBrepohl: {
             role: "Gerente de Produto",
             quote:
-              "Lucas é um desenvolvedor excepcional. Sua atenção aos detalhes e capacidade de transformar ideias complexas em interfaces intuitivas é impressionante. Sempre entrega projetos no prazo e com qualidade superior.",
-          },
-          joao: {
-            role: "CTO",
-            quote:
-              "Trabalhar com Lucas foi uma experiência fantástica. Ele não apenas domina as tecnologias front-end, mas também entende profundamente as necessidades do usuário. Sua contribuição foi fundamental para o sucesso do nosso produto.",
-          },
-          ana: {
-            role: "UX Designer",
-            quote:
-              "Lucas tem uma habilidade única de implementar designs pixel-perfect mantendo a performance e acessibilidade. A colaboração com ele sempre resulta em produtos finais que superam as expectativas.",
-          },
-          carlos: {
-            role: "Desenvolvedor Sênior",
-            quote:
-              "Lucas é um colega excepcional e mentor. Seu código é sempre limpo, bem documentado e seguindo as melhores práticas. Aprendi muito trabalhando ao lado dele.",
+              "Contratei Lucas em 2021 e fui seu supervisor durante 4 anos. Tive a honra de acompanhar a sua evolução como desenvolvedor front-end. Trabalhamos em conjunto em diversos projetos e em todos eles Lucas zelou pela alta qualidade técnica do seu trabalho. Através de sua organização, aperfeiçoamento constante e orientação aos resultados, Lucas elevou o nível do desenvolvimento front-end na LEME. Em seus estudos propôs práticas e processos de melhorias, sempre balanceando eficiência e qualidade. Diante dos desafios, Lucas é um profissional com quem se pode contar, além de ser um excelente companheiro de trabalho. Hoje Lucas já orienta profissionais menos experientes e se tornou uma referência técnica na LEME. Pela sua dedicação, tenho certeza que ele continuará se desenvolvendo e que seu futuro ainda reservará grandes conquistas.",
           },
         },
       },

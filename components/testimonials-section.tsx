@@ -20,35 +20,11 @@ const TestimonialsSection = memo(function TestimonialsSection() {
 
   const testimonials = [
     {
-      name: "Maria Silva",
-      role: t("testimonials.testimonialsList.maria.role"),
-      company: "TechCorp",
-      image: "/placeholder.svg?height=80&width=80",
-      quote: t("testimonials.testimonialsList.maria.quote"),
-      rating: 5,
-    },
-    {
-      name: "João Santos",
-      role: t("testimonials.testimonialsList.joao.role"),
-      company: "StartupXYZ",
-      image: "/placeholder.svg?height=80&width=80",
-      quote: t("testimonials.testimonialsList.joao.quote"),
-      rating: 5,
-    },
-    {
-      name: "Ana Costa",
-      role: t("testimonials.testimonialsList.ana.role"),
-      company: "DesignStudio",
-      image: "/placeholder.svg?height=80&width=80",
-      quote: t("testimonials.testimonialsList.ana.quote"),
-      rating: 5,
-    },
-    {
-      name: "Carlos Oliveira",
-      role: t("testimonials.testimonialsList.carlos.role"),
-      company: "DevAgency",
-      image: "/placeholder.svg?height=80&width=80",
-      quote: t("testimonials.testimonialsList.carlos.quote"),
+      name: "William Brepohl",
+      role: t("testimonials.testimonialsList.williamBrepohl.role"),
+      company: "LEME Inteligência Forense",
+      image: "/testimonials/william-brepohl.jpg",
+      quote: t("testimonials.testimonialsList.williamBrepohl.quote"),
       rating: 5,
     },
   ];
@@ -118,7 +94,7 @@ const TestimonialsSection = memo(function TestimonialsSection() {
                   key={index}
                   className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/1"
                 >
-                  <Card className="glass modern-card h-full relative">
+                  <Card className="glass h-full relative">
                     <CardContent className="p-8 md:p-12 flex flex-col justify-between h-full">
                       <div className="absolute top-6 right-6">
                         <Quote className="h-10 w-10 md:h-12 md:w-12 text-primary/20" />
@@ -144,7 +120,7 @@ const TestimonialsSection = memo(function TestimonialsSection() {
                       <div className="flex flex-col items-center gap-4">
                         <Avatar className="h-14 w-14 md:h-16 md:w-16 border-2 border-primary/20">
                           <AvatarImage
-                            src={testimonial.image || "/placeholder.svg"}
+                            src={testimonial.image}
                             alt={testimonial.name}
                           />
                           <AvatarFallback className="bg-gradient-primary text-white text-lg">
