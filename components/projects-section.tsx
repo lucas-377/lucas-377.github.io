@@ -33,40 +33,94 @@ const ProjectsSection = memo(function ProjectsSection() {
 
   const projects = [
     {
-      title: t("projects.projectsList.ecommerce.title"),
-      description: t("projects.projectsList.ecommerce.description"),
-      image: "/placeholder.svg?height=400&width=600",
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Chart.js"],
-      liveUrl: "#",
-      githubUrl: "#",
+      title: t("projects.projectsList.leme.title"),
+      description: t("projects.projectsList.leme.description"),
+      image: "/projects/leme.jpg",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "Yii2",
+        "Styled Components",
+        "JWT",
+      ],
+      liveUrl: "https://lemeforense.com.br/",
+      githubUrl: null,
       featured: true,
     },
     {
-      title: t("projects.projectsList.taskManagement.title"),
-      description: t("projects.projectsList.taskManagement.description"),
-      image: "/placeholder.svg?height=400&width=600",
-      technologies: ["React", "Framer Motion", "Zustand", "React Query"],
-      liveUrl: "#",
-      githubUrl: "#",
+      title: t("projects.projectsList.central.title"),
+      description: t("projects.projectsList.central.description"),
+      image: "/projects/central.jpg",
+      technologies: [
+        "Yii2",
+        "HTML 5",
+        "CSS3",
+        "Bootstrap",
+        "jQuery",
+        "PostgreSQL",
+      ],
+      liveUrl: "https://centraldascertidoes.com.br/",
+      githubUrl: null,
       featured: true,
     },
     {
-      title: t("projects.projectsList.weatherDashboard.title"),
-      description: t("projects.projectsList.weatherDashboard.description"),
-      image: "/placeholder.svg?height=400&width=600",
-      technologies: ["Vue.js", "Chart.js", "Weather API", "CSS3"],
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: false,
+      title: t("projects.projectsList.innove.title"),
+      description: t("projects.projectsList.innove.description"),
+      image: "/projects/innove.jpg",
+      technologies: [
+        "Laravel",
+        "HTML 5",
+        "CSS3",
+        "Bootstrap",
+        "jQuery",
+        "MySQL",
+      ],
+      liveUrl: "https://www.innoveconsultores.com.br/",
+      githubUrl: null,
+      featured: true,
     },
     {
-      title: t("projects.projectsList.portfolio.title"),
-      description: t("projects.projectsList.portfolio.description"),
-      image: "/placeholder.svg?height=400&width=600",
-      technologies: ["Next.js", "Framer Motion", "Tailwind CSS", "shadcn/ui"],
-      liveUrl: "#",
-      githubUrl: "#",
-      featured: false,
+      title: t("projects.projectsList.mapa.title"),
+      description: t("projects.projectsList.mapa.description"),
+      image: "/projects/mapa.jpg",
+      technologies: [
+        "React",
+        "D3.js",
+        "Styled Components",
+        "React Hook Forms",
+        "Zod",
+        "Vite",
+        "ReactQuery",
+      ],
+      liveUrl: null,
+      githubUrl: null,
+      featured: true,
+    },
+    {
+      title: t("projects.projectsList.centralBlog.title"),
+      description: t("projects.projectsList.centralBlog.description"),
+      image: "/projects/central-blog.jpg",
+      technologies: ["Wordpress", "CSS3", "HTML5", "jQuery"],
+      liveUrl: "https://blog.centraldascertidoes.com.br/",
+      githubUrl: null,
+      featured: true,
+    },
+    {
+      title: t("projects.projectsList.ofni.title"),
+      description: t("projects.projectsList.ofni.description"),
+      image: "/projects/ofni.jpg",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Styled Components",
+        "Shadcn/UI",
+        "Yii2",
+        "JWT",
+      ],
+      liveUrl: "https://ondeficarnailha.com.br/",
+      githubUrl: null,
+      featured: true,
     },
   ];
 
@@ -104,7 +158,7 @@ const ProjectsSection = memo(function ProjectsSection() {
               viewport={{ once: true }}
             >
               <Card
-                className={`overflow-hidden modern-card glass ${
+                className={`py-0 overflow-hidden modern-card glass ${
                   project.featured ? "border-primary/20 animated-border" : ""
                 }`}
               >
@@ -151,21 +205,39 @@ const ProjectsSection = memo(function ProjectsSection() {
                       </div>
                     </div>
                     <div className="flex gap-4">
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="flex-1 glass pulse-on-hover group bg-transparent"
-                      >
-                        <Github className="h-4 w-4 mr-2 group-hover:rotate-12 transition-transform" />
-                        {t("projects.code")}
-                      </Button>
-                      <Button
-                        size="sm"
-                        className="flex-1 pulse-on-hover group bg-gradient-primary border-0"
-                      >
-                        <ExternalLink className="h-4 w-4 mr-2 group-hover:translate-x-1 transition-transform" />
-                        {t("projects.liveDemo")}
-                      </Button>
+                      {project.githubUrl && (
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="flex-1 glass pulse-on-hover group bg-transparent"
+                          asChild
+                        >
+                          <a
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Github className="h-4 w-4 mr-2" />
+                            {t("projects.code")}
+                          </a>
+                        </Button>
+                      )}
+                      {project.liveUrl && (
+                        <Button
+                          size="sm"
+                          className="flex-1 pulse-on-hover group bg-gradient-primary border-0"
+                        >
+                          <a
+                            className="flex"
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <ExternalLink className="h-4 w-4 mr-2" />
+                            {t("projects.liveDemo")}
+                          </a>
+                        </Button>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -185,9 +257,16 @@ const ProjectsSection = memo(function ProjectsSection() {
             variant="outline"
             size="lg"
             className="glass pulse-on-hover bg-transparent"
+            asChild
           >
-            <Github className="mr-2 h-5 w-5" />
-            {t("projects.viewAllProjects")}
+            <a
+              href="https://github.com/lucas-377?tab=repositories"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Github className="mr-2 h-5 w-5" />
+              {t("projects.viewAllProjects")}
+            </a>
           </Button>
         </motion.div>
       </div>

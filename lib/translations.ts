@@ -99,6 +99,61 @@ export const translations = {
           },
         },
       },
+      projects: {
+        badge: "Meu trabalho",
+        title: "Projetos em",
+        titleHighlight: "destaque",
+        description:
+          "Aqui estão alguns dos meus projetos recentes que demonstram minhas habilidades e experiência em desenvolvimento front-end e tecnologias web modernas.",
+        featured: "Destaque",
+        code: "Código",
+        liveDemo: "Demo ao vivo",
+        viewAllProjects: "Ver todos os projetos no GitHub",
+        projectsList: {
+          leme: {
+            title: "Site institucional - LEME",
+            description:
+              "Um site institucional moderno e responsivo construído do absoluto zero, com Yii2 e Next.js. Conta com API RestFull e segurança JWT.",
+          },
+          central: {
+            title: "E-commerce - Central das Certidões",
+            description:
+              "Um e-commerce construído com Yii2, totalmente repaginado utilizando Bootstrap 3.",
+          },
+          innove: {
+            title: "Site institucional - Innove",
+            description:
+              "Outro site institucional moderno e responsivo desenvolvivdo com Laravel 5, completamente repaginado com Bootstrap 5.",
+          },
+          mapa: {
+            title: "SaaS - Mapa de Relacionamentos",
+            description:
+              "Um sistema de grafos, utilizado para pesquisa patrimonial e busca de ativos, construído com React 16 e D3.js, atualizado para React 19, com novos componentes e funcionalidades.",
+          },
+          centralBlog: {
+            title: "Blog - Central das Certidões",
+            description:
+              "Um blog moderno e responsivo, desenvolvido com Wordpress.",
+          },
+          ofni: {
+            title: "Portal - Onde Ficar na Ilha",
+            description:
+              "Um portal para amantes da natureza, encontrarem hospedagens, passeios e restaurantes nas ilhas do Brasil. Desenvolvido com Next.js e Yii2",
+          },
+        },
+      },
+      skills: {
+        badge: "Habilidades e expertise",
+        title: "Habilidades",
+        titleHighlight: "técnicas",
+        description:
+          "Aqui está uma visão geral das minhas habilidades técnicas em diferentes tecnologias e ferramentas de front-end.",
+        categories: {
+          frontend: "Frameworks Frontend",
+          styling: "Estilização e animação",
+          tools: "Ferramentas e fluxo de Trabalho",
+        },
+      },
       testimonials: {
         badge: "Depoimentos",
         title: "O que dizem",
@@ -129,55 +184,10 @@ export const translations = {
           },
         },
       },
-      projects: {
-        badge: "Meu Trabalho",
-        title: "Projetos em",
-        titleHighlight: "Destaque",
-        description:
-          "Aqui estão alguns dos meus projetos recentes que demonstram minhas habilidades e experiência em desenvolvimento front-end e tecnologias web modernas.",
-        featured: "Destaque",
-        code: "Código",
-        liveDemo: "Demo ao Vivo",
-        viewAllProjects: "Ver Todos os Projetos no GitHub",
-        projectsList: {
-          ecommerce: {
-            title: "Dashboard E-Commerce",
-            description:
-              "Um dashboard administrativo de e-commerce moderno e responsivo construído com React e Next.js. Possui análises em tempo real, gerenciamento de inventário e belas visualizações de dados.",
-          },
-          taskManagement: {
-            title: "App de Gerenciamento de Tarefas",
-            description:
-              "Uma aplicação colaborativa de gerenciamento de tarefas com funcionalidade de arrastar e soltar, atualizações em tempo real e recursos de colaboração em equipe construída com padrões React modernos.",
-          },
-          weatherDashboard: {
-            title: "Dashboard do Clima",
-            description:
-              "Um belo dashboard do clima com previsões baseadas em localização, mapas interativos e análises detalhadas do clima com animações suaves.",
-          },
-          portfolio: {
-            title: "Site Portfolio",
-            description:
-              "Um site portfolio moderno e responsivo construído com Next.js com animações suaves, modo escuro e performance otimizada.",
-          },
-        },
-      },
-      skills: {
-        badge: "Habilidades e expertise",
-        title: "Habilidades",
-        titleHighlight: "técnicas",
-        description:
-          "Aqui está uma visão geral das minhas habilidades técnicas em diferentes tecnologias e ferramentas de front-end.",
-        categories: {
-          frontend: "Frameworks Frontend",
-          styling: "Estilização e animação",
-          tools: "Ferramentas e fluxo de Trabalho",
-        },
-      },
       contact: {
-        badge: "Vamos nos Conectar",
+        badge: "Vamos nos conectar",
         title: "Entre em",
-        titleHighlight: "Contato",
+        titleHighlight: "contato",
         description:
           "Estou sempre aberto para discutir novas oportunidades, projetos interessantes ou apenas bater um papo sobre desenvolvimento front-end e tecnologias web modernas.",
         form: {
@@ -190,12 +200,12 @@ export const translations = {
           subject: "Assunto",
           message: "Mensagem",
           messagePlaceholder: "Conte-me sobre seu projeto...",
-          send: "Enviar Mensagem",
+          send: "Enviar mensagem",
           placeholders: {
             firstName: "João",
             lastName: "Silva",
             email: "joao@exemplo.com",
-            subject: "Consulta sobre Projeto",
+            subject: "Consulta sobre projeto",
           },
         },
         info: {
