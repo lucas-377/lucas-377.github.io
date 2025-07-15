@@ -199,7 +199,6 @@ export const translations = {
             "Seja para um projeto em mente, uma colaboração ou apenas para dizer olá, adoraria ouvir de você. Aqui estão as melhores formas de me encontrar:",
           email: "Email",
           phone: "Telefone",
-          location: "Localização",
         },
         availability: {
           title: "Disponível para trabalho freelance",

@@ -2,10 +2,11 @@
 
 import { memo } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone, FileDownIcon } from "lucide-react";
 import { motion } from "framer-motion";
-import { useI18n } from "@/contexts/languageContext";
+import { languages, useI18n } from "@/contexts/languageContext";
 import { ContactForm } from "@/components/contact-form";
+import { Button } from "./ui/button";
 
 const ContactSection = memo(function ContactSection() {
   const { t, isLoading } = useI18n();
@@ -36,6 +37,26 @@ const ContactSection = memo(function ContactSection() {
       title: t("contact.info.phone"),
       value: "+55 (41) 99102-1157",
       href: "tel:+5541991021157",
+    },
+    {
+      icon: FileDownIcon,
+      title: t("hero.downloadCV"),
+      value: (
+        <div className="mt-1 flex flex-col sm:flex-row gap-4">
+          {languages.map((lang) => (
+            <Button
+              variant="outline"
+              asChild
+              key={lang.code}
+              className="glass pulse-on-hover group"
+            >
+              <a href={`/files/cv-lucas-santana-${lang.code}.pdf`} download>
+                {lang.flag} {lang.name}
+              </a>
+            </Button>
+          ))}
+        </div>
+      ),
     },
   ];
 

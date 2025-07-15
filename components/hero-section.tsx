@@ -121,7 +121,7 @@ const HeroSection = memo(function HeroSection() {
                   asChild
                 >
                   <Link
-                    href={`/files/curriculo-lucas-santana-${language}.pdf`}
+                    href={`/files/cv-lucas-santana-${language}.pdf`}
                     download
                   >
                     <Download className="mr-2 h-5 w-5" />

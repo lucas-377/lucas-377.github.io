@@ -66,7 +66,7 @@ const ContactForm = () => {
   };
 
   return (
-    <Card className="glass modern-card lg:sticky lg:top-17">
+    <Card className="glass modern-card lg:sticky lg:top-18">
       <CardHeader>
         <CardTitle className="text-2xl">{t("contact.form.title")}</CardTitle>
         <CardDescription className="text-base">
@@ -159,7 +159,7 @@ const ContactForm = () => {
             disabled={isSubmitting}
             className="w-full pulse-on-hover group bg-gradient-primary border-0"
           >
-            <Send className="mr-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            <Send className="mr-2 h-4 w-4" />
             {isSubmitting ? "Enviando..." : t("contact.form.send")}
           </Button>
         </form>
