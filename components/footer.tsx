@@ -2,7 +2,7 @@
 
 import { memo } from "react";
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, Twitter, Heart } from "lucide-react";
+import { Github, Linkedin, Mail, Heart } from "lucide-react";
 import { useI18n } from "@/contexts/languageContext";
 import Image from "next/image";
 
@@ -45,29 +45,39 @@ const Footer = memo(function Footer() {
                 variant="ghost"
                 size="icon"
                 className="rounded-full glass hover:bg-primary/10 pulse-on-hover"
+                asChild
               >
-                <Github className="h-5 w-5" />
+                <a
+                  href="https://github.com/lucas-377"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Github className="h-6 w-6" />
+                </a>
               </Button>
               <Button
                 variant="ghost"
                 size="icon"
                 className="rounded-full glass hover:bg-primary/10 pulse-on-hover"
+                asChild
               >
-                <Linkedin className="h-5 w-5" />
+                <a
+                  href="https://www.linkedin.com/in/lucas377/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Linkedin className="h-6 w-6" />
+                </a>
               </Button>
               <Button
                 variant="ghost"
                 size="icon"
                 className="rounded-full glass hover:bg-primary/10 pulse-on-hover"
+                asChild
               >
-                <Twitter className="h-5 w-5" />
-              </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="rounded-full glass hover:bg-primary/10 pulse-on-hover"
-              >
-                <Mail className="h-5 w-5" />
+                <a href="mailto:lucas_377@hotmail.com">
+                  <Mail className="h-6 w-6" />
+                </a>
               </Button>
             </div>
           </div>
@@ -135,7 +145,8 @@ const Footer = memo(function Footer() {
 
         <div className="border-t mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm text-muted-foreground">
           <p className="flex items-center">
-            &copy; 2024 Lucas Santana. {t("footer.madeWith")}{" "}
+            &copy; {new Date().getFullYear()} Lucas Santana.{" "}
+            {t("footer.madeWith")}{" "}
             <Heart className="w-4 h-4 mx-1 text-red-500" /> {t("footer.using")}
           </p>
           <p className="mt-2 sm:mt-0">{t("footer.rights")}</p>
