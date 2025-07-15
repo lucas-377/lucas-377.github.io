@@ -181,15 +181,15 @@ export const translations = {
             "Preencha o formulário abaixo e entrarei em contato o mais breve possível.",
           firstName: "Nome",
           lastName: "Sobrenome",
-          email: "Email",
+          email: "E-mail",
           subject: "Assunto",
           message: "Mensagem",
           messagePlaceholder: "Conte-me sobre seu projeto...",
           send: "Enviar mensagem",
           placeholders: {
-            firstName: "João",
-            lastName: "Silva",
-            email: "joao@exemplo.com",
+            firstName: "Seu nome",
+            lastName: "Seu sobrenome",
+            email: "Seu melhor e-mail para contato",
             subject: "Consulta sobre projeto",
           },
         },
@@ -209,7 +209,7 @@ export const translations = {
       },
       footer: {
         description:
-          "Engenheiro Front-End apaixonado por criar experiências de usuário excepcionais com tecnologias web modernas. Sempre aprendendo, sempre construindo.",
+          "Desenvolvedor Front-End apaixonado por criar experiências de usuário incríveis com tecnologias web modernas. Sempre aprendendo, sempre construindo.",
         quickLinks: "Links Rápidos",
         services: "Serviços",
         servicesList: {
@@ -230,6 +230,28 @@ export const translations = {
       toast: {
         themeSet: "Tema definido para {theme}",
         languageSet: "Idioma definido para {language}",
+      },
+      formHelpers: {
+        firstName: {
+          min: "Nome deve ter pelo menos 2 caracteres",
+        },
+        lastName: {
+          min: "Sobrenome deve ter pelo menos 2 caracteres",
+        },
+        email: {
+          invalid: "E-mail inválido",
+        },
+        subject: {
+          min: "Assunto deve ter pelo menos 5 caracteres",
+        },
+        message: {
+          min: "Mensagem deve ter pelo menos 10 caracteres",
+        },
+        toast: {
+          success: "Mensagem enviada com sucesso!",
+          error: "Falha ao enviar mensagem.",
+          networkError: "Ocorreu um erro ao enviar o formulário.",
+        },
       },
     },
     en: {
@@ -254,25 +276,20 @@ export const translations = {
       },
       about: {
         badge: "About Me",
-        title: "Crafting Digital",
-        titleHighlight: "Experiences",
+        title: "Crafting",
+        titleHighlight: "digital experiences",
         description:
-          "I'm a passionate front-end engineer with expertise in creating modern, responsive web applications. I love transforming designs into pixel-perfect, interactive experiences that users love.",
+          "I'm a front-end engineer focused on building efficient, accessible, and SEO-optimized interfaces.",
         paragraph1:
           "My journey in front-end development began with a fascination for how design and code come together to create amazing user experiences. Since then, I've specialized in React, Next.js, and modern CSS frameworks, always staying up-to-date with the latest technologies and best practices.",
         paragraph2:
-          "I focus on writing clean, maintainable code while ensuring optimal performance and accessibility. When I'm not coding, you can find me exploring new front-end frameworks, contributing to open source projects, or sharing knowledge with the developer community.",
+          "When I'm not coding, you can find me enjoying good music, hiking in nature, or tasting great beers.",
         technologiesTitle: "Technologies I work with",
         features: {
           cleanCode: {
             title: "Clean Code",
             description:
               "Writing maintainable, scalable, and efficient code following modern best practices and patterns.",
-          },
-          pixelPerfect: {
-            title: "Pixel Perfect",
-            description:
-              "Transforming designs into pixel-perfect, responsive interfaces with attention to every detail.",
           },
           performance: {
             title: "Performance",
@@ -288,8 +305,8 @@ export const translations = {
       },
       experience: {
         badge: "My Journey",
-        title: "Work",
-        titleHighlight: "Experience",
+        title: "Experience",
+        titleHighlight: "professional",
         description:
           "My professional journey includes working at companies of different sizes, from startups to large corporations, always focusing on delivering high-quality solutions.",
         current: "Current",
@@ -297,71 +314,43 @@ export const translations = {
         technologies: "Technologies Used",
         projects: "Public Projects",
         experienceList: {
-          techcorp: {
-            role: "Senior Front-End Developer",
-            period: "Jan 2023 - Present",
+          leme: {
+            role: "Front-End Engineer",
+            period: "Jul 2021 - Present",
             description:
               "Leading the development of modern and responsive interfaces for large-scale web applications, working closely with design and back-end teams.",
             achievements: [
-              "Developed and maintained 5+ high-performance React applications",
+              "Developed and maintained 3+ high-performance React/Next.js applications",
               "Implemented design system that reduced development time by 40%",
-              "Mentored 3 junior developers and conducted code reviews",
+              "Mentored 1 junior developer and conducted code reviews",
+              "Implemented reusable component library",
               "Optimized application performance, improving Core Web Vitals by 60%",
+              "Implemented A/B testing",
             ],
           },
-          startupxyz: {
-            role: "Front-End Developer",
-            period: "Mar 2021 - Dec 2022",
+          red: {
+            role: "Front-End Engineer",
+            period: "2020 - 2021",
             description:
-              "Responsible for the complete front-end development of a SaaS platform, from prototype to production, working in an agile and dynamic environment.",
+              "Responsible for the complete front-end development of websites, from prototype to production, working in an agile and dynamic environment.",
             achievements: [
-              "Built from scratch the interface of a SaaS platform with Vue.js",
-              "Implemented automated tests that covered 85% of the code",
-              "Collaborated directly with UX/UI designers to implement pixel-perfect designs",
-              "Reduced page loading time by 50% through optimizations",
+              "Built client websites from scratch",
+              "Implemented reusable component library",
+              "Reduced page load time by 50% through optimizations",
+              "Developed base project for websites, reducing development time by 30%",
             ],
           },
           freelance: {
-            role: "Freelance Front-End Developer",
-            period: "Jan 2020 - Mar 2021",
+            role: "Freelance Front-End Engineer",
+            period: "Present",
             location: "Remote",
             description:
               "Provided front-end development services to various clients, creating institutional websites, e-commerce, and custom web applications.",
             achievements: [
-              "Delivered 15+ projects for clients from different segments",
+              "Delivered 5+ projects for clients from different segments",
               "Maintained 100% client satisfaction rate",
-              "Developed custom solutions in WordPress and React",
+              "Developed custom solutions in various technologies",
             ],
-          },
-        },
-      },
-      testimonials: {
-        badge: "Testimonials",
-        title: "What they say",
-        titleHighlight: "about me",
-        description:
-          "Feedback from colleagues, managers, and clients I've had the pleasure of working with throughout my career.",
-        autoplayNote: "Testimonials auto-advance every 5 seconds",
-        testimonialsList: {
-          maria: {
-            role: "Product Manager",
-            quote:
-              "Lucas is an exceptional developer. His attention to detail and ability to transform complex ideas into intuitive interfaces is impressive. Always delivers projects on time and with superior quality.",
-          },
-          joao: {
-            role: "CTO",
-            quote:
-              "Working with Lucas was a fantastic experience. He not only masters front-end technologies but also deeply understands user needs. His contribution was fundamental to our product's success.",
-          },
-          ana: {
-            role: "UX Designer",
-            quote:
-              "Lucas has a unique ability to implement pixel-perfect designs while maintaining performance and accessibility. Collaboration with him always results in final products that exceed expectations.",
-          },
-          carlos: {
-            role: "Senior Developer",
-            quote:
-              "Lucas is an exceptional colleague and mentor. His code is always clean, well-documented, and follows best practices. I learned a lot working alongside him.",
           },
         },
       },
@@ -376,25 +365,35 @@ export const translations = {
         liveDemo: "Live Demo",
         viewAllProjects: "View All Projects on GitHub",
         projectsList: {
-          ecommerce: {
-            title: "E-Commerce Dashboard",
+          leme: {
+            title: "Institutional Website - LEME",
             description:
-              "A modern, responsive e-commerce admin dashboard built with React and Next.js. Features real-time analytics, inventory management, and beautiful data visualizations.",
+              "A modern and responsive institutional website built from scratch with Yii2 and Next.js. Features a RestFull API and JWT security.",
           },
-          taskManagement: {
-            title: "Task Management App",
+          central: {
+            title: "E-commerce - Central das Certidões",
             description:
-              "A collaborative task management application with drag-and-drop functionality, real-time updates, and team collaboration features built with modern React patterns.",
+              "An e-commerce built with Yii2, completely revamped using Bootstrap 3.",
           },
-          weatherDashboard: {
-            title: "Weather Dashboard",
+          innove: {
+            title: "Institutional Website - Innove",
             description:
-              "A beautiful weather dashboard with location-based forecasts, interactive maps, and detailed weather analytics with smooth animations.",
+              "Another modern and responsive institutional website developed with Laravel 5, completely revamped with Bootstrap 5.",
           },
-          portfolio: {
-            title: "Portfolio Website",
+          mapa: {
+            title: "SaaS - Relationship Map",
             description:
-              "A modern, responsive portfolio website built with Next.js featuring smooth animations, dark mode, and optimized performance.",
+              "A graph system used for asset research and search, built with React 16 and D3.js, updated to React 19 with new components and features.",
+          },
+          centralBlog: {
+            title: "Blog - Central das Certidões",
+            description:
+              "A modern and responsive blog, developed with Wordpress.",
+          },
+          ofni: {
+            title: "Portal - Onde Ficar na Ilha",
+            description:
+              "A portal for nature lovers to find accommodations, tours, and restaurants on Brazilian islands. Developed with Next.js and Yii2.",
           },
         },
       },
@@ -403,11 +402,26 @@ export const translations = {
         title: "Technical",
         titleHighlight: "Skills",
         description:
-          "Here's an overview of my technical skills and proficiency levels across different front-end technologies and tools.",
+          "Here's an overview of my technical skills in different front-end technologies and tools.",
         categories: {
           frontend: "Frontend Frameworks",
           styling: "Styling & Animation",
           tools: "Tools & Workflow",
+        },
+      },
+      testimonials: {
+        badge: "Testimonials",
+        title: "What they say",
+        titleHighlight: "about me",
+        description:
+          "Feedback from colleagues, managers, and clients I've had the pleasure of working with throughout my career.",
+        autoplayNote: "Testimonials auto-advance every 5 seconds",
+        testimonialsList: {
+          williamBrepohl: {
+            role: "Product Manager",
+            quote:
+              "I hired Lucas in 2021 and was his supervisor for 4 years. I had the honor of witnessing his growth as a front-end engineer. We worked together on several projects, and in all of them, Lucas ensured the highest technical quality in his work. Through his organization, constant improvement, and results orientation, Lucas raised the level of front-end development at LEME. In his studies, he proposed improvement practices and processes, always balancing efficiency and quality. In the face of challenges, Lucas is a professional you can count on, as well as an excellent colleague. Today, Lucas already mentors less experienced professionals and has become a technical reference at LEME. Given his dedication, I'm sure he will continue to grow and achieve great things in the future.",
+          },
         },
       },
       contact: {
@@ -428,10 +442,10 @@ export const translations = {
           messagePlaceholder: "Tell me about your project...",
           send: "Send Message",
           placeholders: {
-            firstName: "John",
-            lastName: "Doe",
-            email: "john@example.com",
-            subject: "Project Inquiry",
+            firstName: "Your name",
+            lastName: "Your last name",
+            email: "Your best contact email",
+            subject: "Project inquiry",
           },
         },
         info: {
@@ -450,7 +464,7 @@ export const translations = {
       },
       footer: {
         description:
-          "Front-End Engineer passionate about creating exceptional user experiences with modern web technologies. Always learning, always building.",
+          "Front-End Engineer passionate about creating incredible user experiences with modern web technologies. Always learning, always building.",
         quickLinks: "Quick Links",
         services: "Services",
         servicesList: {
@@ -471,6 +485,28 @@ export const translations = {
       toast: {
         themeSet: "Theme set to {theme}",
         languageSet: "Language set to {language}",
+      },
+      formHelpers: {
+        firstName: {
+          min: "First name must be at least 2 characters",
+        },
+        lastName: {
+          min: "Last name must be at least 2 characters",
+        },
+        email: {
+          invalid: "Invalid email address",
+        },
+        subject: {
+          min: "Subject must be at least 5 characters",
+        },
+        message: {
+          min: "Message must be at least 10 characters",
+        },
+        toast: {
+          success: "Message sent successfully!",
+          error: "Failed to send message.",
+          networkError: "An error occurred while sending the form.",
+        },
       },
     },
     es: {
@@ -495,25 +531,20 @@ export const translations = {
       },
       about: {
         badge: "Acerca de Mí",
-        title: "Creando Experiencias",
-        titleHighlight: "Digitales",
+        title: "Creando",
+        titleHighlight: "experiencias digitales",
         description:
-          "Soy un ingeniero front-end apasionado con experiencia en crear aplicaciones web modernas y responsivas. Me encanta transformar diseños en experiencias interactivas y pixel-perfect que los usuarios adoran.",
+          "Soy un ingeniero front-end enfocado en crear interfaces eficientes, accesibles y optimizadas para SEO.",
         paragraph1:
           "Mi viaje en el desarrollo front-end comenzó con una fascinación por cómo el diseño y el código se unen para crear experiencias de usuario increíbles. Desde entonces, me he especializado en React, Next.js y frameworks CSS modernos, manteniéndome siempre actualizado con las últimas tecnologías y mejores prácticas.",
         paragraph2:
-          "Me enfoco en escribir código limpio y mantenible mientras aseguro un rendimiento y accesibilidad óptimos. Cuando no estoy programando, puedes encontrarme explorando nuevos frameworks front-end, contribuyendo a proyectos de código abierto o compartiendo conocimiento con la comunidad de desarrolladores.",
+          "Cuando no estoy programando, puedes encontrarme disfrutando de buena música, haciendo senderismo en la naturaleza o degustando buenas cervezas.",
         technologiesTitle: "Tecnologías con las que trabajo",
         features: {
           cleanCode: {
             title: "Código Limpio",
             description:
               "Escribiendo código mantenible, escalable y eficiente siguiendo las mejores prácticas y patrones modernos.",
-          },
-          pixelPerfect: {
-            title: "Pixel Perfect",
-            description:
-              "Transformando diseños en interfaces pixel-perfect y responsivas con atención a cada detalle.",
           },
           performance: {
             title: "Rendimiento",
@@ -530,7 +561,7 @@ export const translations = {
       experience: {
         badge: "Mi Trayectoria",
         title: "Experiencia",
-        titleHighlight: "Laboral",
+        titleHighlight: "profesional",
         description:
           "Mi trayectoria profesional incluye trabajos en empresas de diferentes tamaños, desde startups hasta grandes corporaciones, siempre enfocándome en entregar soluciones de alta calidad.",
         current: "Actual",
@@ -538,71 +569,43 @@ export const translations = {
         technologies: "Tecnologías Utilizadas",
         projects: "Proyectos Públicos",
         experienceList: {
-          techcorp: {
-            role: "Desarrollador Front-End Senior",
-            period: "Ene 2023 - Presente",
+          leme: {
+            role: "Ingeniero Front-End",
+            period: "Jul 2021 - Presente",
             description:
               "Lidero el desarrollo de interfaces modernas y responsivas para aplicaciones web de gran escala, trabajando en estrecha colaboración con equipos de diseño y back-end.",
             achievements: [
-              "Desarrollé y mantuve 5+ aplicaciones React de alto rendimiento",
+              "Desarrollé y mantuve 3+ aplicaciones React/Next.js de alto rendimiento",
               "Implementé sistema de diseño que redujo tiempo de desarrollo en 40%",
-              "Mentoré a 3 desarrolladores junior y conduje revisiones de código",
-              "Optimicé rendimiento de aplicaciones, mejorando Core Web Vitals en 60%",
+              "Mentoré a 1 desarrollador junior y conduje revisiones de código",
+              "Implementé biblioteca de componentes reutilizables",
+              "Optimicé el rendimiento de las aplicaciones, mejorando el Core Web Vitals en 60%",
+              "Implementé pruebas A/B",
             ],
           },
-          startupxyz: {
-            role: "Desarrollador Front-End",
-            period: "Mar 2021 - Dic 2022",
+          red: {
+            role: "Ingeniero Front-End",
+            period: "2020 - 2021",
             description:
-              "Responsable del desarrollo completo del front-end de una plataforma SaaS, desde el prototipo hasta la producción, trabajando en un ambiente ágil y dinámico.",
+              "Responsable del desarrollo completo del front-end de sitios web, desde el prototipo hasta la producción, trabajando en un entorno ágil y dinámico.",
             achievements: [
-              "Construí desde cero la interfaz de una plataforma SaaS con Vue.js",
-              "Implementé pruebas automatizadas que cubrieron 85% del código",
-              "Colaboré directamente con diseñadores UX/UI para implementar diseños pixel-perfect",
-              "Reduje el tiempo de carga de páginas en 50% a través de optimizaciones",
+              "Construí sitios web de clientes desde cero",
+              "Implementé biblioteca de componentes reutilizables",
+              "Reduje el tiempo de carga de las páginas en 50% a través de optimizaciones",
+              "Desarrollé proyecto base para sitios web, reduciendo el tiempo de desarrollo en 30%",
             ],
           },
           freelance: {
-            role: "Desarrollador Front-End Freelancer",
-            period: "Ene 2020 - Mar 2021",
+            role: "Ingeniero Front-End Freelancer",
+            period: "Presente",
             location: "Remoto",
             description:
-              "Presté servicios de desarrollo front-end a diversos clientes, creando sitios web institucionales, e-commerce y aplicaciones web personalizadas.",
+              "Presté servicios de desarrollo front-end a diversos clientes, creando sitios institucionales, e-commerces y aplicaciones web personalizadas.",
             achievements: [
-              "Entregué 15+ proyectos para clientes de diferentes segmentos",
+              "Entregué 5+ proyectos para clientes de diferentes segmentos",
               "Mantuve tasa de satisfacción del 100% de los clientes",
-              "Desarrollé soluciones personalizadas en WordPress y React",
+              "Desarrollé soluciones personalizadas en diversas tecnologías",
             ],
-          },
-        },
-      },
-      testimonials: {
-        badge: "Testimonios",
-        title: "Lo que dicen",
-        titleHighlight: "de mí",
-        description:
-          "Comentarios de colegas de trabajo, gerentes y clientes con quienes he tenido el placer de trabajar a lo largo de mi carrera.",
-        autoplayNote: "Los testimonios avanzan automáticamente cada 5 segundos",
-        testimonialsList: {
-          maria: {
-            role: "Gerente de Producto",
-            quote:
-              "Lucas es un desarrollador excepcional. Su atención al detalle y capacidad para transformar ideas complejas en interfaces intuitivas es impresionante. Siempre entrega proyectos a tiempo y con calidad superior.",
-          },
-          joao: {
-            role: "CTO",
-            quote:
-              "Trabajar con Lucas fue una experiencia fantástica. No solo domina las tecnologías front-end, sino que también entiende profundamente las necesidades del usuario. Su contribución fue fundamental para el éxito de nuestro producto.",
-          },
-          ana: {
-            role: "Diseñadora UX",
-            quote:
-              "Lucas tiene una habilidad única para implementar diseños pixel-perfect manteniendo el rendimiento y la accesibilidad. La colaboración con él siempre resulta en productos finales que superan las expectativas.",
-          },
-          carlos: {
-            role: "Desarrollador Senior",
-            quote:
-              "Lucas es un colega excepcional y mentor. Su código siempre es limpio, bien documentado y sigue las mejores prácticas. Aprendí mucho trabajando junto a él.",
           },
         },
       },
@@ -617,38 +620,63 @@ export const translations = {
         liveDemo: "Demo en Vivo",
         viewAllProjects: "Ver Todos los Proyectos en GitHub",
         projectsList: {
-          ecommerce: {
-            title: "Dashboard E-Commerce",
+          leme: {
+            title: "Sitio institucional - LEME",
             description:
-              "Un dashboard administrativo de e-commerce moderno y responsivo construido con React y Next.js. Incluye análisis en tiempo real, gestión de inventario y hermosas visualizaciones de datos.",
+              "Un sitio institucional moderno y responsivo construido desde cero, con Yii2 y Next.js. Cuenta con API RestFull y seguridad JWT.",
           },
-          taskManagement: {
-            title: "App de Gestión de Tareas",
+          central: {
+            title: "E-commerce - Central das Certidões",
             description:
-              "Una aplicación colaborativa de gestión de tareas con funcionalidad de arrastrar y soltar, actualizaciones en tiempo real y características de colaboración en equipo construida con patrones React modernos.",
+              "Un e-commerce construido con Yii2, totalmente renovado utilizando Bootstrap 3.",
           },
-          weatherDashboard: {
-            title: "Dashboard del Clima",
+          innove: {
+            title: "Sitio institucional - Innove",
             description:
-              "Un hermoso dashboard del clima con pronósticos basados en ubicación, mapas interactivos y análisis detallados del clima con animaciones suaves.",
+              "Otro sitio institucional moderno y responsivo desarrollado con Laravel 5, completamente renovado con Bootstrap 5.",
           },
-          portfolio: {
-            title: "Sitio Web Portfolio",
+          mapa: {
+            title: "SaaS - Mapa de Relaciones",
             description:
-              "Un sitio web portfolio moderno y responsivo construido con Next.js con animaciones suaves, modo oscuro y rendimiento optimizado.",
+              "Un sistema de grafos, utilizado para investigación patrimonial y búsqueda de activos, construido con React 16 y D3.js, actualizado a React 19, con nuevos componentes y funcionalidades.",
+          },
+          centralBlog: {
+            title: "Blog - Central das Certidões",
+            description:
+              "Un blog moderno y responsivo, desarrollado con Wordpress.",
+          },
+          ofni: {
+            title: "Portal - Onde Ficar na Ilha",
+            description:
+              "Un portal para amantes de la naturaleza, para encontrar alojamientos, paseos y restaurantes en las islas de Brasil. Desarrollado con Next.js y Yii2.",
           },
         },
       },
       skills: {
         badge: "Habilidades y Experiencia",
         title: "Habilidades",
-        titleHighlight: "Técnicas",
+        titleHighlight: "técnicas",
         description:
-          "Aquí tienes una visión general de mis habilidades técnicas y niveles de competencia en diferentes tecnologías y herramientas front-end.",
+          "Aquí tienes una visión general de mis habilidades técnicas en diferentes tecnologías y herramientas front-end.",
         categories: {
           frontend: "Frameworks Frontend",
           styling: "Estilización y Animación",
           tools: "Herramientas y Flujo de Trabajo",
+        },
+      },
+      testimonials: {
+        badge: "Testimonios",
+        title: "Lo que dicen",
+        titleHighlight: "de mí",
+        description:
+          "Comentarios de colegas de trabajo, gerentes y clientes con quienes he tenido el placer de trabajar a lo largo de mi carrera.",
+        autoplayNote: "Los testimonios avanzan automáticamente cada 5 segundos",
+        testimonialsList: {
+          williamBrepohl: {
+            role: "Gerente de Producto",
+            quote:
+              "Contraté a Lucas en 2021 y fui su supervisor durante 4 años. Tuve el honor de acompañar su evolución como ingeniero front-end. Trabajamos juntos en varios proyectos y en todos ellos Lucas veló por la más alta calidad técnica en su trabajo. A través de su organización, mejora constante y orientación a resultados, Lucas elevó el nivel del desarrollo front-end en LEME. En sus estudios propuso prácticas y procesos de mejora, siempre equilibrando eficiencia y calidad. Ante los desafíos, Lucas es un profesional en quien se puede confiar, además de ser un excelente compañero de trabajo. Hoy Lucas ya orienta a profesionales menos experimentados y se ha convertido en una referencia técnica en LEME. Por su dedicación, estoy seguro de que seguirá desarrollándose y que su futuro aún le deparará grandes logros.",
+          },
         },
       },
       contact: {
@@ -669,10 +697,10 @@ export const translations = {
           messagePlaceholder: "Cuéntame sobre tu proyecto...",
           send: "Enviar Mensaje",
           placeholders: {
-            firstName: "Juan",
-            lastName: "Pérez",
-            email: "juan@ejemplo.com",
-            subject: "Consulta de Proyecto",
+            firstName: "Tu nombre",
+            lastName: "Tu apellido",
+            email: "Tu mejor correo de contacto",
+            subject: "Consulta de proyecto",
           },
         },
         info: {
@@ -691,7 +719,7 @@ export const translations = {
       },
       footer: {
         description:
-          "Ingeniero Front-End apasionado por crear experiencias de usuario excepcionales con tecnologías web modernas. Siempre aprendiendo, siempre construyendo.",
+          "Ingeniero Front-End apasionado por crear experiencias de usuario increíbles con tecnologías web modernas. Siempre aprendiendo, siempre construyendo.",
         quickLinks: "Enlaces Rápidos",
         services: "Servicios",
         servicesList: {
@@ -712,6 +740,28 @@ export const translations = {
       toast: {
         themeSet: "Tema establecido en {theme}",
         languageSet: "Idioma establecido en {language}",
+      },
+      formHelpers: {
+        firstName: {
+          min: "El nombre debe tener al menos 2 caracteres",
+        },
+        lastName: {
+          min: "El apellido debe tener al menos 2 caracteres",
+        },
+        email: {
+          invalid: "Correo electrónico inválido",
+        },
+        subject: {
+          min: "El asunto debe tener al menos 5 caracteres",
+        },
+        message: {
+          min: "El mensaje debe tener al menos 10 caracteres",
+        },
+        toast: {
+          success: "¡Mensaje enviado con éxito!",
+          error: "No se pudo enviar el mensaje.",
+          networkError: "Ocurrió un error al enviar el formulario.",
+        },
       },
     },
   };
