@@ -1,7 +1,7 @@
 "use client";
 
-import { memo } from "react";
-import { motion } from "framer-motion";
+import { memo, useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useI18n } from "@/contexts/languageContext";
 import { ExperienceCard } from "./experience-card";
 
@@ -128,6 +128,14 @@ const ExperienceSection = memo(function ExperienceSection() {
     },
   ];
 
+  // Timeline animation setup
+  const timelineRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: timelineRef,
+    offset: ["start end", "end center"],
+  });
+  const scaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
   return (
     <section id="experience" className="py-24 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -166,9 +174,18 @@ const ExperienceSection = memo(function ExperienceSection() {
           ))}
         </div>
         {/* Desktop: timeline layout */}
-        <div className="relative hidden md:block">
+        <div ref={timelineRef} className="relative hidden md:block">
           {/* Timeline vertical bar (centered on desktop) */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-primary/20 rounded-full -translate-x-1/2 z-0" />
+          <div className="absolute left-1/2 top-0 bottom-0 w-1 -translate-x-1/2 z-0 flex flex-col">
+            {/* Animated fill bar */}
+            <motion.div
+              className="w-full bg-primary rounded-full origin-top absolute"
+              style={{
+                height: "100%",
+                scaleY: scaleY,
+              }}
+            />
+          </div>
           <div className="space-y-16">
             {experiences.map((exp, index) => {
               const isLeft = index % 2 === 1;
@@ -196,13 +213,21 @@ const ExperienceSection = memo(function ExperienceSection() {
                   </div>
                   {/* Timeline dot (center column) */}
                   <div className="flex justify-center items-center relative z-10">
-                    <div
+                    <motion.div
+                      initial={{ opacity: 0, y: 60 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{
+                        duration: 0.7,
+                        ease: "easeOut",
+                        delay: index * 0.15,
+                      }}
+                      viewport={{ amount: 0.3, once: true }}
                       className={`w-6 h-6 rounded-full border-4 ${
                         exp.current
                           ? "border-green-500 bg-green-500"
                           : "border-primary bg-background"
                       } flex items-center justify-center`}
-                    ></div>
+                    ></motion.div>
                   </div>
                   {/* Right card (even indices) */}
                   <div className={!isLeft ? "flex justify-start" : ""}>
