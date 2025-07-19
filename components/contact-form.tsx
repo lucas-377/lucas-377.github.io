@@ -66,7 +66,7 @@ const ContactForm = () => {
   };
 
   return (
-    <Card className="glass modern-card lg:sticky lg:top-18">
+    <Card className="glass modern-card lg:sticky lg:top-20">
       <CardHeader>
         <CardTitle className="text-2xl">{t("contact.form.title")}</CardTitle>
         <CardDescription className="text-base">

@@ -25,38 +25,12 @@ const ContactSection = memo(function ContactSection() {
     );
   }
 
-  const contactInfo = [
+  const items = [
+    { title: "Email", value: "me@example.com" },
+    { title: "Phone", value: "(123) 456-7890" },
     {
-      icon: Mail,
-      title: t("contact.info.email"),
-      value: "lucas_377@hotmail.com",
-      href: "mailto:lucas_377@hotmail.com",
-    },
-    {
-      icon: Phone,
-      title: t("contact.info.phone"),
-      value: "+55 (41) 99102-1157",
-      href: "tel:+5541991021157",
-    },
-    {
-      icon: FileDownIcon,
       title: t("hero.downloadCV"),
-      value: (
-        <div className="mt-1 flex flex-col sm:flex-row gap-4">
-          {languages.map((lang) => (
-            <Button
-              variant="outline"
-              asChild
-              key={lang.code}
-              className="glass pulse-on-hover group"
-            >
-              <a href={`/files/cv-lucas-santana-${lang.code}.pdf`} download>
-                {lang.flag} {lang.name}
-              </a>
-            </Button>
-          ))}
-        </div>
-      ),
+      isDownloadCV: true, // Add a flag for special handling
     },
   ];
 
@@ -109,12 +83,12 @@ const ContactSection = memo(function ContactSection() {
             </div>
 
             <div className="space-y-6">
-              {contactInfo.map((info, index) => (
+              {items.map((item, idx) => (
                 <motion.div
-                  key={index}
+                  key={idx}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  transition={{ duration: 0.6, delay: idx * 0.1 }}
                   viewport={{ once: true }}
                 >
                   <Card className="glass modern-card">
@@ -122,19 +96,40 @@ const ContactSection = memo(function ContactSection() {
                       <div className="flex items-center space-x-4">
                         <div className="flex-shrink-0">
                           <div className="w-12 h-12 rounded-lg bg-gradient-primary/10 flex items-center justify-center">
-                            <info.icon className="h-6 w-6 text-primary" />
+                            {/* This icon is not used in the new items array, so it's removed */}
+                            {/* <info.icon className="h-6 w-6 text-primary" /> */}
                           </div>
                         </div>
                         <div>
                           <h4 className="font-semibold text-lg">
-                            {info.title}
+                            {item.title}
                           </h4>
-                          <a
-                            href={info.href}
-                            className="text-muted-foreground hover:text-primary transition-colors text-base"
-                          >
-                            {info.value}
-                          </a>
+                          {item.isDownloadCV ? (
+                            <div className="mt-1 flex flex-col sm:flex-row gap-4">
+                              {languages.map((lang) => (
+                                <Button
+                                  variant="outline"
+                                  asChild
+                                  key={lang.code}
+                                  className="glass pulse-on-hover group"
+                                >
+                                  <a
+                                    href={`/files/cv-lucas-santana-${lang.code}.pdf`}
+                                    download
+                                  >
+                                    {lang.flag} {lang.name}
+                                  </a>
+                                </Button>
+                              ))}
+                            </div>
+                          ) : (
+                            <a
+                              href={item.value}
+                              className="text-muted-foreground hover:text-primary transition-colors text-base"
+                            >
+                              {item.value}
+                            </a>
+                          )}
                         </div>
                       </div>
                     </CardContent>

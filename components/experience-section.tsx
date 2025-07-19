@@ -179,7 +179,20 @@ const ExperienceSection = memo(function ExperienceSection() {
                 >
                   {/* Left card (odd indices) */}
                   <div className={isLeft ? "flex justify-end" : ""}>
-                    {isLeft && <ExperienceCard exp={exp} t={t} />}
+                    {isLeft && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 60 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{
+                          duration: 0.7,
+                          ease: "easeOut",
+                          delay: index * 0.15,
+                        }}
+                        viewport={{ amount: 0.3, once: true }}
+                      >
+                        <ExperienceCard exp={exp} t={t} />
+                      </motion.div>
+                    )}
                   </div>
                   {/* Timeline dot (center column) */}
                   <div className="flex justify-center items-center relative z-10">
@@ -193,7 +206,20 @@ const ExperienceSection = memo(function ExperienceSection() {
                   </div>
                   {/* Right card (even indices) */}
                   <div className={!isLeft ? "flex justify-start" : ""}>
-                    {!isLeft && <ExperienceCard exp={exp} t={t} />}
+                    {!isLeft && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 60 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{
+                          duration: 0.7,
+                          ease: "easeOut",
+                          delay: index * 0.15,
+                        }}
+                        viewport={{ amount: 0.3, once: true }}
+                      >
+                        <ExperienceCard exp={exp} t={t} />
+                      </motion.div>
+                    )}
                   </div>
                 </div>
               );
