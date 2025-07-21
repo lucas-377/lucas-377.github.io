@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: "Lucas Santana - Front-End Engineer",
     description:
       "Desenvolvedor Front-End apaixonado por criar experiências de usuário incríveis.",
-    siteName: "Lucas Santana Portfolio",
+    siteName: "Lucas Santana Portfólio",
   },
   twitter: {
     card: "summary_large_image",
