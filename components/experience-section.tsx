@@ -179,7 +179,7 @@ const ExperienceSection = memo(function ExperienceSection() {
           <div className="absolute left-1/2 top-0 bottom-0 w-1 -translate-x-1/2 z-0 flex flex-col">
             {/* Animated fill bar */}
             <motion.div
-              className="w-full bg-primary rounded-full origin-top absolute"
+              className="timeline-element w-full bg-gradient-to-b from-primary/20 via-primary/80 to-primary rounded-full origin-top absolute"
               style={{
                 height: "100%",
                 scaleY: scaleY,
@@ -222,7 +222,7 @@ const ExperienceSection = memo(function ExperienceSection() {
                         delay: index * 0.15,
                       }}
                       viewport={{ amount: 0.3, once: true }}
-                      className={`w-6 h-6 rounded-full border-4 ${
+                      className={`timeline-element w-6 h-6 rounded-full border-4 ${
                         exp.current
                           ? "border-green-500 bg-green-500"
                           : "border-primary bg-background"

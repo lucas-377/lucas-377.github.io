@@ -26,11 +26,12 @@ const ContactSection = memo(function ContactSection() {
   }
 
   const items = [
-    { title: "Email", value: "me@example.com" },
-    { title: "Phone", value: "(123) 456-7890" },
+    { title: "Email", value: "lucas_377@hotmail.com", icon: Mail },
+    { title: "Phone", value: "+55 (41) 99102-1157", icon: Phone },
     {
       title: t("hero.downloadCV"),
-      isDownloadCV: true, // Add a flag for special handling
+      isDownloadCV: true,
+      icon: FileDownIcon,
     },
   ];
 
@@ -96,15 +97,33 @@ const ContactSection = memo(function ContactSection() {
                       <div className="flex items-center space-x-4">
                         <div className="flex-shrink-0">
                           <div className="w-12 h-12 rounded-lg bg-gradient-primary/10 flex items-center justify-center">
-                            {/* This icon is not used in the new items array, so it's removed */}
-                            {/* <info.icon className="h-6 w-6 text-primary" /> */}
+                            {item.icon && (
+                              <item.icon className="h-6 w-6 text-primary" />
+                            )}
                           </div>
                         </div>
                         <div>
-                          <h4 className="font-semibold text-lg">
+                          <div className="text-lg font-semibold mb-1">
                             {item.title}
-                          </h4>
-                          {item.isDownloadCV ? (
+                          </div>
+                          {item.title === "Email" ? (
+                            <a
+                              href={`mailto:${item.value ?? ""}`}
+                              className="text-primary underline break-all"
+                            >
+                              {item.value ?? ""}
+                            </a>
+                          ) : item.title === "Phone" ? (
+                            <a
+                              href={`tel:${(item.value ?? "").replace(
+                                /[^+\d]/g,
+                                ""
+                              )}`}
+                              className="text-primary underline"
+                            >
+                              {item.value ?? ""}
+                            </a>
+                          ) : item.isDownloadCV ? (
                             <div className="mt-1 flex flex-col sm:flex-row gap-4">
                               {languages.map((lang) => (
                                 <Button
@@ -123,12 +142,7 @@ const ContactSection = memo(function ContactSection() {
                               ))}
                             </div>
                           ) : (
-                            <a
-                              href={item.value}
-                              className="text-muted-foreground hover:text-primary transition-colors text-base"
-                            >
-                              {item.value}
-                            </a>
+                            <span>{item.value}</span>
                           )}
                         </div>
                       </div>
