@@ -144,12 +144,12 @@ const Footer = memo(function Footer() {
         </div>
 
         <div className="border-t mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm text-muted-foreground">
-          <p className="flex items-center">
+          <p className="flex flex-col sm:flex-row items-center">
             &copy; {new Date().getFullYear()} Lucas Santana.{" "}
             {t("footer.madeWith")}{" "}
             <Heart className="w-4 h-4 mx-1 text-red-500" /> {t("footer.using")}
           </p>
-          <p className="mt-2 sm:mt-0">{t("footer.rights")}</p>
+          <p className="mt-8 sm:mt-0">{t("footer.rights")}</p>
         </div>
       </div>
     </footer>

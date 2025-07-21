@@ -124,7 +124,7 @@ const ContactSection = memo(function ContactSection() {
                               {item.value ?? ""}
                             </a>
                           ) : item.isDownloadCV ? (
-                            <div className="mt-1 flex flex-col sm:flex-row gap-4">
+                            <div className="mt-4 sm:mt-1 flex flex-col sm:flex-row gap-4">
                               {languages.map((lang) => (
                                 <Button
                                   variant="outline"
