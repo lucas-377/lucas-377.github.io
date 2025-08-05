@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: "https://lucassantana.dev",
+    url: "https://lucas-377.github.io/",
     title: "Lucas Santana - Front-End Engineer",
     description:
       "Desenvolvedor Front-End apaixonado por criar experiências de usuário incríveis.",

@@ -261,5 +261,5 @@ button {
 }
 
 .timeline-element {
-  box-shadow: 0 0 10px 5px color-mix(in oklab, var(--primary) 30%, transparent);
+  box-shadow: 0 0 16px 5px color-mix(in oklab, var(--primary) 20%, transparent);
 }

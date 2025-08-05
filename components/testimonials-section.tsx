@@ -27,6 +27,14 @@ const TestimonialsSection = memo(function TestimonialsSection() {
       quote: t("testimonials.testimonialsList.williamBrepohl.quote"),
       rating: 5,
     },
+    {
+      name: "Leonardo Damigo",
+      role: t("testimonials.testimonialsList.leonardoDamigo.role"),
+      company: "LEME Inteligência Forense",
+      image: "/testimonials/leonardo-damigo.jpg",
+      quote: t("testimonials.testimonialsList.leonardoDamigo.quote"),
+      rating: 5,
+    },
   ];
 
   if (isLoading) {
